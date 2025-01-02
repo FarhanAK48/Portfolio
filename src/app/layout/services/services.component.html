@@ -1,0 +1,83 @@
+<div class="bg-[#0b243c] text-white p-6 py-10 lg:px-20 w-full">
+  <div class="">
+
+    <h1 class="bg-[#052c65] text-xl font-semibold px-4 py-1 rounded-lg inline tracking-[0.2em]">Services</h1>
+
+    <section class="services-intro  py-2">
+      <h1 class="text-4xl font-bold mb-4">Services I am providing</h1>
+      <p class="text-lg">I specialize in building high-quality web and mobile applications by leveraging my expertise in
+        frontend and backend technologies. I provide a wide range of full-stack development services that combine
+        creativity with cutting-edge technology.</p>
+    </section>
+
+    <section class="services-grid py-16 bg-[#0788FF] text-black">
+      <div class="container mx-auto grid grid-cols-1  md:grid-cols-2 gap-8 px-6">
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-3">Front-End Development</h3>
+          <p>I design and develop responsive, user-friendly interfaces that deliver seamless experiences across web and
+            mobile platforms, leveraging technologies like Angular, Ionic, JavaScript, HTML, CSS, Tailwind CSS, and
+            Bootstrap.</p>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-3">Back-End Development</h3>
+          <p> I develop secure, scalable server-side applications and APIs to manage data and business logic
+            efficiently.</p>
+        </div>
+
+      </div>
+    </section>
+    <section class="technologies py-16 text-black bg-gray-100">
+      <h2 class="text-3xl font-bold mb-8 text-center">Technologies I Work With</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+        <div class="technology-card bg-white rounded-lg overflow-hidden shadow-lg">
+          <img class="w-full" src="../../../assets/dev1.jpg" alt="Angular">
+          <div class="px-4 py-4">
+            <div class="font-bold text-xl mb-2">Angular</div>
+            <p class="text-gray-700">A powerful front-end framework for building dynamic, single-page applications with a
+              strong focus on performance and scalability.</p>
+          </div>
+        </div>
+        <div class="technology-card bg-white rounded-lg overflow-hidden shadow-lg">
+          <img class="w-full" src="../../../assets/dev4.jpg" alt="Ionic">
+          <div class="px-4 py-4">
+            <div class="font-bold text-xl mb-2">Ionic</div>
+            <p class="text-gray-700">A versatile framework for creating cross-platform mobile applications with a single
+              codebase, leveraging Angular for rich UI components.</p>
+          </div>
+        </div>
+        <div class="technology-card bg-white rounded-lg overflow-hidden shadow-lg">
+          <img class="w-full" src="../../../assets/dev5.jpg" alt="Node.js">
+          <div class="px-4 py-4">
+            <div class="font-bold text-xl mb-2">Node.js</div>
+            <p class="text-gray-700">A JavaScript runtime enabling server-side development, allowing for efficient,
+              scalable, and non-blocking back-end applications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills py-16 text-black bg-gray-100">
+      <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 px-6">
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center" *ngFor="let skill of skillArray">
+          <p class="font-bold text-lg">{{skill}}</p>
+        </div>
+
+      </div>
+    </section>
+   
+
+    <section class="process py-16 w-full bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">My Work Process</h2>
+      </div>
+    </section>
+
+    <section class="cta text-center py-16 bg-blue-500 text-white">
+      <h2 class="text-3xl font-bold mb-4">Ready to Start a Project?</h2>
+      <p class="mb-8">Get in touch and let's discuss how I can help you build your next big idea!</p>
+      <a href="/contact" class="px-8 py-4 bg-white text-blue-500 font-bold rounded-lg">Contact Me</a>
+    </section>
+  </div>
+ 
+</div>
