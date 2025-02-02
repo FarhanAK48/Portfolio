@@ -7,12 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { HomeModule } from './layout/home/home.module';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutModule } from './layout/layout.module';
+import { ClickedOutsideDirective } from './_directive/clickoutside.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ClickedOutsideDirective
   ],
   imports: [
     BrowserModule,

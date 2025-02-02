@@ -9,8 +9,7 @@ import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
-    LayoutComponent,
-    
+    LayoutComponent,   
     
   ],
   imports: [
