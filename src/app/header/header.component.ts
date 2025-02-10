@@ -63,18 +63,8 @@ export class HeaderComponent implements OnInit {
 
 
   clickOut() {
-    console.log('Clicked outside:', event); // Debugging
     this.menuOpened = false;
     
   }
-  // clickOut(event: any) {
-  //   console.log('clicked...')
-  //   // if (event) {
-  //   if(this.menuOpened){
-  //     this.menuOpened = false;
-  //   } else {
-  //     this.menuOpened = true;
-  //   }
-  //   // }
-  // }
+
 }
