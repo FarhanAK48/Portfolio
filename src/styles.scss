@@ -2,3 +2,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary-color: #1e3a8a; /* Blue-900 */
+    --secondary-color: #9333ea; /* Purple-600 */
+    --background-color: #ffffff; /* White */
+    --text-color: #000000; /* Black */
+  }
+  
+  /* Dark Mode */
+  .dark {
+    --primary-color: #3b82f6; /* Blue-500 */
+    --secondary-color: #a855f7; /* Purple-500 */
+    --background-color: #111827; /* Gray-900 */
+    --text-color: #ffffff; /* White */
+  }
+  
+  /* Apply background and text colors globally */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }

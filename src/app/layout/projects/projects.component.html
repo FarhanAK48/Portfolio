@@ -1,61 +1,23 @@
-<div class="projects-page bg-gray-100 text-black p-6 py-10 lg:px-20 md:flex items-center">
+<div
+    class="projects-page bg-gray-100 dark:bg-[#000000] text-black dark:text-white p-6 py-10 lg:px-20 md:flex items-center">
     <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">My Projects</h2>
-        <p class=" mb-12">A selection of projects demonstrating my experience with both front-end and back-end technologies.</p>
+        <p class=" mb-12">A selection of projects demonstrating my experience with both front-end and back-end
+            technologies.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <!-- <img src="project1-thumbnail.jpg" alt="Project 1" class="w-full h-48 object-cover"> -->
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold">YoderLay</h3>
-                    <p class="text-gray-600">This is Ionic application which name is Yoderlay, designed to provide a seamless online service for individuals facing issues with everyday essentials such as electrical systems, ovens, refrigerators, plumbing, and more. The application enables users to report faults or request assistance, and it assigns the task to a nearby mechanic. Additionally, users can apply for services through the app, with oversight and management provided by the admin.</p>
-                    <div class="mt-4">
-                        <span class="text-sm font-semibold text-gray-700">Technologies:Ionic</span>
-                    </div>
-                    <div class="mt-4">
-                        <a (click)="navigate()" class="text-indigo-600 hover:underline">View Project</a>
-                    </div>
+            <div *ngFor="let project of projects"
+                class="bg-white dark:bg-[#1e1e1e] text-black dark:text-white transition-transform duration-300 hover:scale-105  rounded-lg shadow-lg overflow-hidden p-6">
+                <h3 class="text-xl mb-4 font-semibold">{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                <div class="mt-4">
+                    <span class="text-sm font-semibold">Technologies: {{ project.technologies.join(', ') }}</span>
                 </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold">Thurrock Training Consultancy</h3>
-                    <p class="text-gray-600">This is an Angular application named Thurrock Training Consultancy, designed to assist students who aspire to study abroad in countries such as the UK, USA, Canada, Australia, and more.</p>
-                    <div class="mt-4">
-                        <span class="text-sm font-semibold text-gray-700">Technologies: Angular, Tailwind CSS and Laravell</span>
-                    </div>
-                    <div class="mt-4">
-                        <a href="project2-link" class="text-indigo-600 hover:underline">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <!-- <img src="project1-thumbnail.jpg" alt="Project 1" class="w-full h-48 object-cover"> -->
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold">Ok Stack</h3>
-                    <p class="text-gray-600">This is an Angular application named OK Stack, developed to monitor servers, provide detailed information about server performance, and track errors along with their respective purposes.</p>
-                    <div class="mt-4">
-                        <span class="text-sm font-semibold text-gray-700">Technologies:Angular, Tailwind css and Node js</span>
-                    </div>
-                    <div class="mt-4">
-                        <a href="project1-link" class="text-indigo-600 hover:underline">View Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold">Thurrock Training Consultancy</h3>
-                    <p class="text-gray-600">This is an Angular application named Thurrock Training Consultancy, designed to assist students who aspire to study abroad in countries such as the UK, USA, Canada, Australia, and more.</p>
-                    <div class="mt-4">
-                        <span class="text-sm font-semibold text-gray-700">Technologies: Angular, Tailwind CSS and Laravell</span>
-                    </div>
-                    <div class="mt-4">
-                        <a href="project2-link" class="text-indigo-600 hover:underline">View Project</a>
-                    </div>
+                <div class="mt-4">
+                    <a [href]="project.link" class="text-indigo-600 hover:underline">View Project</a>
                 </div>
             </div>
         </div>
     </div>
 
-  
-  </div>
+
+</div>

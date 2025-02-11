@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private renderer:Renderer2) {
 
   }
   selectedTab: any = 'Home';
   menuOpened = false;
+  isDarkMode = false;
   tabs = [
     'Home', 'Services', 'projects', 'About', 'Contact'
   ];
@@ -23,6 +24,11 @@ export class HeaderComponent implements OnInit {
     if (savedTab) {
       this.selectedTab = savedTab;
       this.router.navigate([`/${this.selectedTab.toLowerCase()}`]);
+    }
+
+    this.isDarkMode = localStorage.getItem('theme') === 'dark';
+    if (this.isDarkMode) {
+      this.renderer.addClass(document.documentElement, 'dark');
     }
 
   }
@@ -67,4 +73,14 @@ export class HeaderComponent implements OnInit {
     
   }
 
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      this.renderer.addClass(document.documentElement, 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      this.renderer.removeClass(document.documentElement, 'dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }
 }

@@ -1,4 +1,4 @@
-<div class="bg-gray-100 text-black p-6 py-10 lg:px-20 md:flex items-center">
+<div class=" bg-gray-100 dark:bg-[#000000] text-black dark:text-white p-6 py-10 lg:px-20 md:flex items-center">
   <div class="">
 
     <h1 class="bg-[#052c65] text-white text-xl font-semibold px-4 py-1 rounded-lg inline tracking-[0.2em]">Services</h1>
@@ -9,36 +9,39 @@
         frontend and backend technologies. I provide a wide range of full-stack development services that combine
         creativity with cutting-edge technology.</p>
     </section>
+    <div class="bg-gray-100 dark:bg-[#000000] text-black dark:text-white">
 
-    <section class="services-grid py-16 bg-gray-100 text-black">
+  
+    <section class="services-grid py-16  ">
       <div class="container mx-auto grid grid-cols-1  md:grid-cols-2 gap-8">
-        <div *ngFor="let item of services" class="service-card bg-white p-6 transition-transform duration-300 hover:scale-105 rounded-lg shadow-lg">
+        <div *ngFor="let item of services" class="service-card  bg-white dark:bg-[#1e1e1e] text-black dark:text-white p-6 transition-transform duration-300 hover:scale-105 rounded-lg shadow-lg">
           <h3 class="text-xl font-bold mb-3">{{item.name}}</h3>
           <p>{{item.desc}}</p>
         </div>      
       </div>
     </section>
-    <section class="technologies py-16 text-black bg-gray-100">
+    <section class="technologies py-16">
       <h2 class="text-3xl font-bold mb-8 text-center">Technologies I Work With</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5" >
-        <div class="technology-card bg-white rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 shadow-lg"  *ngFor="let item of technologies">
+        <div class="technology-card  bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 shadow-lg"  *ngFor="let item of technologies">
           <img class="w-full" [src]="item.image" alt="Angular">
           <div class="px-4 py-4">
             <div class="font-bold text-xl mb-2">{{item.name}}</div>
-            <p class="text-gray-700">{{item.detail}}</p>
+            <p class="">{{item.detail}}</p>
           </div>
         </div>      
       </div>
     </section>
 
-    <section class="skills py-16 text-black bg-gray-100">
+    <section class="skills py-16 ">
       <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="skill-card bg-white p-4 transition-transform duration-300 hover:scale-105 rounded-lg shadow-lg text-center" *ngFor="let skill of skillArray">
+        <div class="skill-card  bg-white dark:bg-[#1e1e1e] text-black dark:text-white p-4 transition-transform duration-300 hover:scale-105 rounded-lg shadow-lg text-center" *ngFor="let skill of skillArray">
           <p class="font-bold text-lg">{{skill}}</p>
         </div>
       </div>
     </section>
+  </div>
   </div>
  
 </div>
