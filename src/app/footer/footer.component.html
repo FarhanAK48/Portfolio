@@ -38,34 +38,45 @@
  
   </footer> -->
 
-    <div class="bg-[#0b243c] text-white p-6 py-10 lg:px-20 mx-auto md:flex justify-between hr-1">
-      
-      <div class="contact-info sm:text-center flex flex-col items-start">
-        <p class="text-sm">Contact: +(92)3471701646</p>
-        <p class="text-sm my-1">Whatsapp: +92 3471701646</p>
-        <p class="text-sm">Email: <a href="mailto:jeena@example.com" class="underline">mfarhanakhtar48@gmail.com</a></p>
-        <p class=" text-sm my-1"> <span class="font-medium text-md">Location:</span> Ali Town near Thokar niaz baig, Lahore, Pakistan</p>
-      </div>
+    <div class="bg-white dark:bg-[#222222] text-black dark:text-[#f5f5f5] p-6 py-10 lg:px-20 mx-auto md:flex justify-between">
   
-     
-      <div class="social-links flex flex-col my-8 sm:my-0">
-        <p class="text-lg font-semibold">Services</p>
-        <a routerLink="/home"  class="text-sm hover:text-[#0788FF]">Home</a>
-        <a routerLink="/services" class="text-sm my-1 hover:text-[#0788FF]">Services</a>
-        <a routerLink="/projects" class="text-sm hover:text-[#0788FF]">Projects</a>
-      </div>
-  
-      <div class=" flex flex-col ">
-        <p class="text-lg font-semibold">Usefull links</p>
-        <a class="hover:underline cursor-pointer" *ngFor="let label of tabs" (click)="changeTab(label)">{{label}}</a>
-       
-      </div>
-  
+  <!-- Contact Section -->
+  <div class="contact-info text-center md:text-left flex flex-col items-start space-y-2 leading-relaxed">
+    <p class="text-lg font-semibold mb-1">Contact Information</p>
+    <p class="text-sm font-semibold">Contact: <span class="font-normal">+92 347 1701646</span></p>
+    <p class="text-sm font-semibold">WhatsApp: <span class="font-normal">+92 347 1701646</span></p>
+    <p class="text-sm font-semibold">
+      Email: 
+      <a href="mailto:mfarhanakhtar48@gmail.com" class="underline text-blue-600 dark:text-blue-400 hover:text-blue-700">
+        mfarhanakhtar48@gmail.com
+      </a>
+    </p>
+    <p class="text-sm font-semibold flex justify-start">
+      Location:<span class="font-normal ml-1"> Lahore, Pakistan</span>
+    </p>
+  </div>
 
-     
-      <!-- Copyright -->
+  <!-- Services Section -->
+  <div class="services flex flex-col my-8 sm:my-0">
+    <p class="text-lg font-semibold">Services</p>
+    <p class="text-sm font-medium mt-1">Frontend Development</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">Angular, React.js, JavaScript, TypeScript, Tailwind CSS, Bootstrap</p>
+  
+    <p class="text-sm font-medium mt-2">Mobile App Development</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">Ionic, React Native</p>
+  
+    <p class="text-sm font-medium mt-2">Backend Development</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400">Node.js, Express.js</p>
+  </div>
 
-      <!-- <div class="copyright text-center">
-        <p>&copy; 2024 Jeena. All Rights Reserved.</p>
-      </div> -->
-    </div>
+  <!-- Useful Links -->
+  <div class="flex flex-col">
+    <p class="text-lg font-semibold">Useful Links</p>
+    <a class="text-sm cursor-pointer hover:text-[#0788FF]" 
+       [routerLink]="'/' + label.toLowerCase()" 
+       *ngFor="let label of tabs">
+      {{label}}
+    </a>
+  </div>
+
+</div>
