@@ -9,11 +9,11 @@
             <button (click)="toggleMenu()" type="button"
                 class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                 <span class="sr-only">Open main menu</span>
-                <svg class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
-                    aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+                <svg class="h-6 w-6 stroke-black dark:stroke-[#f5f5f5] fill-black dark:fill-[#222222]" 
+                viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
@@ -30,15 +30,15 @@
                     <path d="M21.752 15.002A9 9 0 1 1 9.002 2.248a7 7 0 1 0 12.75 12.75z" />
                 </svg>
             </button>
-            <a class="text-md font-semibold leading-6 transition-transform duration-300 flex items-center hover:scale-105 cursor-pointer"
+            <a class="text-md font-semibold hover:text-[#0788FF] leading-6 transition-transform duration-300 flex items-center hover:scale-105 cursor-pointer"
                 *ngFor="let label of tabs" (click)="changeTab(label)"
                 [ngClass]="{'tab-color': selectedTab == label}">{{label}}</a>
 
         </div>
     </nav>
-    <!-- header for mobile  -->
+    <!-- header for medium screen  -->
     <div *ngIf="menuOpened" (clickOutside)="clickOut()" clickedOutside
-        class="fixed mobile-menu inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:w-[300px] sm:ring-1 sm:ring-gray-900/10">
+        class="fixed mobile-menu inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-[#222222] text-black dark:text-[#f5f5f5] px-6 py-6 sm:w-[300px] sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
 
             <svg width="40" height="40" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
                 <polygon fill="#C3002F" points="125,10 125,27 125,27 125,27 125,240 216,200 240,65" />
                 <path fill="#FFF" d="M125 32L52 195h27l14-35h64l14 35h27L125 32zm20 106h-40l20-47 20 47z" />
             </svg>
-            <button (click)="toggleTheme()"
+            <!-- <button (click)="toggleTheme()"
                 class="fixed top-4 right-4 px-4 py-2 bg-blue-500 dark:bg-yellow-400 text-white dark:text-black rounded-md shadow-md z-50">
                 <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-800 dark:text-white transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5" />
@@ -58,7 +58,7 @@
                     stroke-linejoin="round">
                     <path d="M21.752 15.002A9 9 0 1 1 9.002 2.248a7 7 0 1 0 12.75 12.75z" />
                 </svg>
-            </button>
+            </button> -->
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" (click)="toggleMenu()">
                 <span class="sr-only">Close menu</span>
                 <svg class="h-6 w-6" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -67,10 +67,11 @@
                 </svg>
             </button>
         </div>
+        <!-- This is for mobile -->
         <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                    <button (click)="toggleTheme()"
+                    <!-- <button (click)="toggleTheme()"
                         class="fixed top-4 right-4 px-4 py-2 bg-blue-500 dark:bg-yellow-400 text-white dark:text-black rounded-md shadow-md z-50">
                         <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-800 dark:text-white transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="5" />
@@ -82,8 +83,8 @@
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21.752 15.002A9 9 0 1 1 9.002 2.248a7 7 0 1 0 12.75 12.75z" />
                         </svg>
-                    </button>
-                    <a class="-mx-3 block rounded-lg transition-transform duration-300 hover:scale-105 px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    </button> -->
+                    <a class="-mx-3 block rounded-lg transition-transform duration-300 hover:scale-105 px-3 py-2 text-base font-semibold leading-7 bg-white dark:bg-[#222222] text-black dark:text-[#f5f5f5]"
                         *ngFor="let item of tabs" (click)="changeTab(item)">{{item}} </a>
                 </div>
             </div>

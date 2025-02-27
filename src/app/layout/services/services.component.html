@@ -24,7 +24,7 @@
       <h2 class="text-3xl font-bold mb-8 text-center">Technologies I Work With</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5" >
         <div class="technology-card  bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 shadow-lg"  *ngFor="let item of technologies">
-          <img class="w-full" [src]="item.image" alt="Angular">
+          <img class="w-full" loading="lazy" [src]="item.image" alt="Angular">
           <div class="px-4 py-4">
             <div class="font-bold text-xl mb-2">{{item.name}}</div>
             <p class="">{{item.detail}}</p>

@@ -11,5 +11,11 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'assets/Farhan.pdf'; // Path to the CV file
+    link.download = 'My_CV.pdf'; // Name of the file when downloaded
+    link.click();
+  }
 
 }
