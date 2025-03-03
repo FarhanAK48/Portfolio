@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
-
-  constructor() { }
+  applyAnimation = false;
+  constructor() { this.applyAnimation = true; }
   technologies:any[] = [
     {
       name: 'Angular',

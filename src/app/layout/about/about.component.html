@@ -1,4 +1,4 @@
-<div id="about" class="bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
+<div  [ngClass]="{ 'slide-down': applyAnimation }" id="about" class="bg-gray-100 text-font dark:bg-[#121212] text-black dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
     <div class="md:w-[450px] flex md:justify-start">
       <img loading="lazy"
         class="w-[400px] h-[400px] rounded-full shadow-lg"
@@ -8,7 +8,7 @@
     </div>
     <div class="flex-1 mt-6 md:mt-0 md:ml-10">
       <h1 class="text-4xl font-medium">About Me</h1>
-      <div class="py-4 text-base font-normal">
+      <div class="py-4">
         <p>
           Hello! I'm <span class="font-semibold">Farhan</span>, a skilled Full-Stack Developer with a strong passion for crafting dynamic and user-friendly applications.
           With expertise in <span class="font-semibold">Angular, Ionic,React Js Node.js</span>, and a deep understanding of modern web development technologies, I

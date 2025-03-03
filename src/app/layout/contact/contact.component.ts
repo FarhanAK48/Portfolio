@@ -23,7 +23,14 @@ export class ContactComponent implements OnInit {
       content: `<a href="tel:+923471701646" class="text-blue-400 hover:underline">+923471701646</a>`,
     },
   ];
-  constructor() { }
+  applyAnimation = false;
+  constructor() {
+    // setTimeout(() => {
+      this.applyAnimation = true;
+    // }, 0); 
+   }
+
+ 
 
   ngOnInit(): void {
   }

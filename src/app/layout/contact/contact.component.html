@@ -1,5 +1,5 @@
-<div
-    class="contact-section bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
+<div  [ngClass]="{ 'slide-down': applyAnimation }"
+    class="contact-section text-font bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
     <div class=" flex-1">
 
 
@@ -7,18 +7,18 @@
         <p class="text-center mb-12">Feel free to reach out for collaborations, inquiries, or just to connect!</p>
         <div class="contact-info-cards bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] py-8">
             <h2 class="text-3xl font-bold text-center mb-8">Contact Information</h2>
-            <div class="container rounded-md py-5 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div *ngFor="let card of contactCards" class="card transition-transform duration-300 hover:scale-110 bg-white dark:bg-[#1e1e1e] text-black dark:text-white p-8 rounded-lg shadow-lg text-center">
-                    <div class="icon mb-4 flex flex-col items-center text-blue-400">
-                      <div class="h-14 w-14 flex justify-center items-center border-2 hover:bg-blue-600 border-blue-600 rounded-full transform hover:scale-110 transition-transform duration-300">
-                        <ng-container [ngSwitch]="card.icon">
-                          <svg *ngSwitchCase="'location'" xmlns="http://www.w3.org/2000/svg" fill="black" class="w-6 h-6">
+            <div class="container rounded-2xl py-5 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div *ngFor="let card of contactCards" class="card transition-transform duration-[800ms] hover:scale-110 bg-white dark:bg-[#1e1e1e] text-black dark:text-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="icon mb-4 flex flex-col items-center text-black dark:text-white">
+                      <div class="h-14 w-14 flex justify-center items-center border-2 hover:bg-blue-500 border-blue-500 rounded-full transform hover:scale-110 transition-transform duration-[800ms]">
+                        <ng-container [ngSwitch]="card.icon" class="text-black dark:text-white">
+                          <svg *ngSwitchCase="'location'" xmlns="http://www.w3.org/2000/svg" fill="fill-current" class="w-6 h-6 fill-current">
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 4.64 7 13 7 13s7-8.36 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                           </svg>
-                          <svg *ngSwitchCase="'email'" xmlns="http://www.w3.org/2000/svg" fill="black" class="w-6 h-6">
+                          <svg *ngSwitchCase="'email'" xmlns="http://www.w3.org/2000/svg" fill="fill-current" class="w-6 h-6 fill-current">
                             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                           </svg>
-                          <svg *ngSwitchCase="'phone'" xmlns="http://www.w3.org/2000/svg" fill="black" class="w-6 h-6">
+                          <svg *ngSwitchCase="'phone'" xmlns="http://www.w3.org/2000/svg" fill="fill-current" class="w-6 h-6 fill-current">
                             <path d="M6.62 10.79a15.66 15.66 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.23c1.2.48 2.51.75 3.88.75a1 1 0 011 1v3.11a1 1 0 01-1 1c-8.84 0-16-7.16-16-16a1 1 0 011-1h3.11a1 1 0 011 1c0 1.37.26 2.68.75 3.88a1 1 0 01-.23 1.11l-2.2 2.2z"/>
                           </svg>
                         </ng-container>
@@ -31,25 +31,25 @@
         </div>
 
         <div class="container mx-auto flex py-5 flex-col lg:flex-row gap-10">
-            <div class="w-full  rounded-lg ">
+            <div class="w-full  rounded-2xl ">
                 <form action="#" method="POST">
                     <div class="mb-6">
                         <label for="name" class="block mb-2 text-sm font-medium">Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter name" required
-                            class="w-full px-4 py-2 bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            class="w-full px-4 py-2 bg-white hover:border-b-2 border-blue-500 dark:bg-[#1e1e1e] text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div class="mb-6">
                         <label for="email" class="block mb-2 text-sm font-medium">Email</label>
                         <input type="email" id="email" name="email" placeholder="Enter email" required
-                            class="w-full px-4 py-2 bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            class="w-full px-4 py-2 hover:border-b-2 border-blue-500 bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div class="mb-6">
                         <label for="message" class="block mb-2 text-sm font-medium">Message</label>
                         <textarea id="message" name="message" rows="4" placeholder="Textarea..." required
-                            class="w-full px-4 py-2 bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            class="w-full px-4 py-2 hover:border-b-2 border-blue-500 bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     </div>
                     <button type="submit"
-                        class="w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 transition duration-300">
+                        class="w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-500 transition duration-[800ms]">
                         Send Message
                     </button>
                 </form>

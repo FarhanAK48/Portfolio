@@ -1,22 +1,37 @@
-<div
-    class="projects-page bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
+<div [ngClass]="{ 'slide-down': applyAnimation }"
+    class="projects-page text-font bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
     <div class="container mx-auto">
         <h2 class="text-3xl font-bold mb-8">My Projects</h2>
         <p class=" mb-12">A selection of projects demonstrating my experience with both front-end and back-end
             technologies.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
             <div *ngFor="let project of projects"
-                class="bg-white dark:bg-[#1e1e1e] text-black dark:text-white transition-transform duration-300 hover:scale-105  rounded-lg shadow-lg overflow-hidden p-6">
+                class="bg-white dark:bg-[#1e1e1e] text-black dark:text-white rounded-2xl shadow-lg overflow-hidden py-6 px-4">
                 <h3 class="text-xl mb-4 font-semibold">{{ project.name }}</h3>
                 <p>{{ project.description }}</p>
                 <div class="mt-4">
                     <span class="text-sm font-semibold">Technologies: {{ project.technologies.join(', ') }}</span>
                 </div>
                 <div class="mt-4">
-                    <a [href]="project.link" class="text-indigo-600 hover:underline">View Project</a>
+                    <a (click)="navigate(project.name)" class="text-indigo-600 hover:underline">View Project</a>
                 </div>
+                <section *ngIf="selectedProject === project.name"
+                    [ngClass]="{'translate-y-0 ease-in-out duration-2000 delay-800 opacity-100': selectedProject === project.name, 'translate-y-[-200px] opacity-0': selectedProject !== project.name}"
+                    class="technologies  py-6bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] transition-all duration-1000 ease-in-out">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Project Images</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 sm:gap-8 gap-4 sm:px-8 px-4">
+                        <div *ngFor="let item of project.photos; let i = index" [ngClass]="{
+            'translate-y-0 ease-in-out duration-[2000ms] delay-[100ms] opacity-100': showImages[i],
+            'translate-y-[-40px] opacity-0 duration-[6000ms] ease-in-out': !showImages[i]
+          }" class="technology-card transition-transform duration-700 ease-in-out hover:scale-105 bg-white rounded-lg overflow-hidden shadow-lg">
+                            <img [src]="item" alt="">
+                        </div>
+                    </div>
+                </section>
             </div>
+
         </div>
+
     </div>
 
 

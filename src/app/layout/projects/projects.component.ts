@@ -15,6 +15,16 @@ export class ProjectsComponent implements OnInit {
         'This is an Ionic application named Yoderlay, designed to provide a seamless online service for individuals facing issues with everyday essentials such as electrical systems, ovens, refrigerators, plumbing, and more. The application enables users to report faults or request assistance, and it assigns the task to a nearby mechanic.',
       technologies: ['Ionic'],
       link: 'project1-link',
+      photos : [
+       
+      
+        "../../../assets/yoderlay/5.png",
+        "../../../assets/yoderlay/6.png",
+        "../../../assets/yoderlay/7.png",
+        "../../../assets/yoderlay/8.png",
+        "../../../assets/yoderlay/3.png",
+        "../../../assets/yoderlay/4.png",
+      ]
     },
     {
       name: 'Thurrock Training Consultancy',
@@ -38,16 +48,56 @@ export class ProjectsComponent implements OnInit {
       link: 'project4-link',
     },
   ];
+
+  // yoderlayPhotos:any[] = [
+  //   "../../../assets/yoderlay/1.png",
+  //   "../../../assets/yoderlay/2.png",
+  //   "../../../assets/yoderlay/3.png",
+  //   "../../../assets/yoderlay/4.png",
+  //   "../../../assets/yoderlay/5.png",
+  //   "../../../assets/yoderlay/6.png",
+  //   "../../../assets/yoderlay/7.png",
+  //   "../../../assets/yoderlay/8.png",
+  // ];
+  images = false;
+  showImage = false;
+  showpictures = false;
+  selectedProject:any;
+  showImages: any[] = new Array(9).fill(false);
   constructor(
     private router:Router
-  ) { }
+  ) {
+    this.applyAnimation = true;
+   }
+  applyAnimation = false;
+ 
 
   ngOnInit(): void {
 
   }
 
-  navigate(){
-    this.router.navigate(['/images']);
+ 
+
+  loadImages() {
+    this.showImages = new Array(9).fill(false); 
+
+    for (let i = 0; i < this.showImages.length; i += 2) {
+      setTimeout(() => {
+        for (let j = i; j < i + 2 && j < this.showImages.length; j++) {
+          this.showImages[j] = true;
+        }
+      }, i * 500); 
+    }
+  }
+
+  navigate(value:any){
+    this.selectedProject = value;
+    this.loadImages(); 
+  
+      this.images = true;      
+      // setTimeout(() => this.showImage = true, 200);
+      // setTimeout(() => this.showpictures = true, 500);
+    
   }
 
 }

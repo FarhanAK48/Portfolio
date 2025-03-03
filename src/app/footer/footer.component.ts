@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  // constructor()  {
+  //   this.applyAnimation = true;
+  //  }
+  applyAnimation = false;
   constructor(private router: Router) { }
   selectedTab: any = 'Home';
   tabs = [
@@ -16,6 +19,7 @@ export class FooterComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.applyAnimation = true;
   }
 
   changeTab(onboardStep: string) {

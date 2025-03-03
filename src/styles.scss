@@ -20,7 +20,36 @@
   
   /* Apply background and text colors globally */
   body {
+    font-family: Lato, sans-serif;
+    // font-family: 'Courier New', Courier, monospace;
+    // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
+    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // font-family: 'Times New Roman', Times, serif;
+    // font-family:sans-serif;
+   
+
     background-color: var(--background-color);
     color: var(--text-color);
     transition: all 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    0% {
+      transform: translateX(-60px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-down {
+    animation: slideDown 2s ease-in-out;
+  }
+
+  .text-font {
+    font-size: 15px;
   }
