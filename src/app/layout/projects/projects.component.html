@@ -17,13 +17,13 @@
                 </div>
                 <section *ngIf="selectedProject === project.name"
                     [ngClass]="{'translate-y-0 ease-in-out duration-2000 delay-800 opacity-100': selectedProject === project.name, 'translate-y-[-200px] opacity-0': selectedProject !== project.name}"
-                    class="technologies  py-6bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] transition-all duration-1000 ease-in-out">
+                    class="technologies rounded-2xl mt-4 py-6 bg-gray-100 dark:bg-[#121212] text-black dark:text-[#e0e0e0] transition-all duration-1000 ease-in-out">
                     <h2 class="text-3xl font-bold mb-8 text-center">Project Images</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 sm:gap-8 gap-4 sm:px-8 px-4">
                         <div *ngFor="let item of project.photos; let i = index" [ngClass]="{
             'translate-y-0 ease-in-out duration-[2000ms] delay-[100ms] opacity-100': showImages[i],
             'translate-y-[-40px] opacity-0 duration-[6000ms] ease-in-out': !showImages[i]
-          }" class="technology-card transition-transform duration-700 ease-in-out hover:scale-105 bg-white rounded-lg overflow-hidden shadow-lg">
+          }" class="technology-card transition-transform duration-700 ease-in-out hover:scale-105 bg-white rounded-2xl overflow-hidden shadow-lg">
                             <img [src]="item" alt="">
                         </div>
                     </div>
