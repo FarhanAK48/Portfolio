@@ -90,7 +90,7 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
-  navigate(value:any){
+  viewDetail(value:any){
     this.selectedProject = value;
     this.loadImages(); 
   
