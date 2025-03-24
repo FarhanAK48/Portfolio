@@ -30,7 +30,17 @@ export class ServicesComponent implements OnInit {
       detail: 'A JavaScript runtime enabling server-side development, allowing for efficient, scalable, and non-blocking back-end applications.',
     }
   ]
-  skillArray:string[] = ['HTML','CSS','Bootstrap','Tailwind Css','JavaScript','Angular','Ionic', 'React Js','Node js']
+   skills = [
+    { skill: 'HTML', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { skill: 'CSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { skill: 'Bootstrap', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+    { skill: 'Tailwind Css', img: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' },
+    { skill: 'JavaScript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { skill: 'Angular', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+    { skill: 'Ionic', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg' },
+    { skill: 'React Js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { skill: 'Node js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' }
+  ];  
   services:any[] = [
     {
       name: 'Front-End Development',

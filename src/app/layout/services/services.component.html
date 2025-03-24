@@ -35,9 +35,10 @@
 
     <section class="skills py-16 ">
       <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="skill-card  bg-white dark:bg-[#1e1e1e] text-black dark:text-white p-4 transition-transform ease-in-out duration-[800ms] hover:scale-105 rounded-lg shadow-lg text-center" *ngFor="let skill of skillArray">
-          <p class="font-bold text-lg">{{skill}}</p>
+      <div class="grid grid-cols-2 md:grid-cols-9 gap-6">
+        <div class="skill-card  bg-white dark:bg-[#1e1e1e] text-black dark:text-white p-4 transition-transform ease-in-out duration-[800ms] hover:scale-105 rounded-lg shadow-lg flex flex-col justify-center items-center " *ngFor="let item of skills">
+         <img class="h-12 flex items-center justify-center" src="{{item.img}}" alt="">
+          <p class="font-bold text-lg mt-4">{{item.skill}}</p>
         </div>
       </div>
     </section>
