@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from '../service/layout.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -18,10 +19,10 @@ export class HeaderComponent implements OnInit {
   tabs = [
     'Home', 'Services', 'projects', 'About', 'Contact'
   ];
-
+ private sub!:Subscription;
 
   ngOnInit(): void {
-    this.layoutService.message$.subscribe(val => this.selectedTab = val);
+  this.sub =  this.layoutService.message$.subscribe(val => this.selectedTab = val);
     const savedTab = localStorage.getItem('selectedTab');
     console.log('Tab',savedTab);
     if (savedTab) {
@@ -85,5 +86,9 @@ export class HeaderComponent implements OnInit {
       this.renderer.removeClass(document.documentElement, 'dark');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe(); // clean up
   }
 }
