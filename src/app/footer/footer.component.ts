@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LayoutService } from '../service/layout.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +12,7 @@ export class FooterComponent implements OnInit {
   //   this.applyAnimation = true;
   //  }
   applyAnimation = false;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private layoutService:LayoutService) { }
   selectedTab: any = 'Home';
   tabs = [
     'Home', 'Services', 'projects', 'About', 'Contact'
@@ -24,6 +25,9 @@ export class FooterComponent implements OnInit {
 
   changeTab(onboardStep: string) {
     this.selectedTab = onboardStep;
+    this.layoutService.sendTab(this.selectedTab);
+    localStorage.setItem('selectedTab', this.selectedTab);
+
     switch (onboardStep) {
       case 'Home':
         this.router.navigate(['/home']);
@@ -35,10 +39,10 @@ export class FooterComponent implements OnInit {
         this.router.navigate(['/projects']);
         break;
       case 'About':
-        this.router.navigate(['/']);
+        this.router.navigate(['/about']);
         break;
       case 'Contact':
-        this.router.navigate(['/']);
+        this.router.navigate(['/contact']);
         break;
       default:
         this.router.navigate(['/']);

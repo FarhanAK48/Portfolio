@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
     {
       title: 'Email',
       icon: 'email',
-      content: `<a href="mailto:mfarhanakhtar@gmail.com" class="text-blue-400 hover:underline">mfarhanakhtar@gmail.com</a>`,
+      content: `<a href="mailto:mfarhanakhtar48@gmail.com" class="text-blue-400 hover:underline">mfarhanakhtar48@gmail.com</a>`,
     },
     {
       title: 'Phone',

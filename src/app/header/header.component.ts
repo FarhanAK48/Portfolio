@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { LayoutService } from '../service/layout.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router, private renderer:Renderer2) {
+  constructor(private router: Router, private renderer:Renderer2, private layoutService:LayoutService) {
 
   }
   selectedTab: any = 'Home';
@@ -20,7 +21,9 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.layoutService.message$.subscribe(val => this.selectedTab = val);
     const savedTab = localStorage.getItem('selectedTab');
+    console.log('Tab',savedTab);
     if (savedTab) {
       this.selectedTab = savedTab;
       this.router.navigate([`/${this.selectedTab.toLowerCase()}`]);

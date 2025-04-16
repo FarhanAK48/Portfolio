@@ -3,31 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-// :root {
-//     --primary-color: #1e3a8a; /* Blue-900 */
-//     --secondary-color: #9333ea; /* Purple-600 */
-//     --background-color: #ffffff; /* White */
-//     --text-color: #000000; /* Black */
-//   }
-  
-  /* Dark Mode */
-  // .dark {
-  //   --primary-color: #3b82f6; /* Blue-500 */
-  //   --secondary-color: #a855f7; /* Purple-500 */
-  //   --background-color: #111827; /* Gray-900 */
-  //   --text-color: #ffffff; /* White */
-  // }
-  
-  /* Apply background and text colors globally */
   body {
     font-family: Lato, sans-serif;
-    // font-family: 'Courier New', Courier, monospace;
-    // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    // font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
-    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    // font-family: 'Times New Roman', Times, serif;
-    // font-family:sans-serif;
+
    
 
     background-color: var(--background-color);

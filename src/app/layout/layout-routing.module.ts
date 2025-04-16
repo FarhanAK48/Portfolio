@@ -13,7 +13,6 @@ const routes: Routes = [
       { path: "projects", loadChildren: () => import("./projects/projects.module").then((m) => m.ProjectsModule), },
       { path: "contact", loadChildren: () => import("./contact/contact.module").then((m) => m.ContactModule), },
       { path: "about", loadChildren: () => import("./about/about.module").then((m) => m.AboutModule), },
-      { path: "images", loadChildren: () => import("./project-images/project-images.module").then((m) => m.ProjectImagesModule) },
 
     ]
   }
