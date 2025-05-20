@@ -1,48 +1,67 @@
-<div  [ngClass]="{ 'slide-down': applyAnimation }" class="bg-gray-100 text-font dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
+<div [ngClass]="{ 'slide-down': applyAnimation }"
+  class="bg-gray-100 text-font dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
   <div class="">
 
-    <h1 class="bg-[#052c65] text-white text-xl font-semibold px-4 py-1 rounded-lg inline tracking-[0.2em]">Services</h1>
 
-    <section class="services-intro  py-2">
-      <h1 class="text-4xl font-bold mb-4">Services I am providing</h1>
-      <p class="">I specialize in building high-quality web and mobile applications by leveraging my expertise in
-        frontend and backend technologies. I provide a wide range of full-stack development services that combine
-        creativity with cutting-edge technology.</p>
+    <section class="services-intro text-center py-2">
+      <h2 class="text-4xl font-semibold  bg-clip-text  my-4 text-center">
+        Services<br />
+        <span class="text-base font-normal">— What I offer —</span>
+      </h2>
     </section>
     <div class="bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0]">
-
-  
-    <section class="services-grid py-16  ">
-      <div class=" mx-auto grid grid-cols-1  md:grid-cols-2 gap-8">
-        <div *ngFor="let item of services" class="service-card  bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white p-6 transition-transform ease-in-out duration-[800ms] hover:scale-105 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-3">{{item.name}}</h3>
-          <p>{{item.desc}}</p>
-        </div>      
-      </div>
-    </section>
-    <section class="technologies py-16">
-      <h2 class="text-3xl font-bold mb-8 text-center">Technologies I Work With</h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-5" >
-        <div class="technology-card  bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white rounded-2xl overflow-hidden transition-transform ease-in-out duration-[800ms] hover:scale-105 shadow-lg"  *ngFor="let item of technologies">
-          <img class="w-full" loading="lazy" [src]="item.image" alt="Angular">
-          <div class="px-4 py-4">
-            <div class="font-bold text-xl mb-2">{{item.name}}</div>
-            <p class="">{{item.detail}}</p>
+      <section class="services-grid py-8  ">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-4">
+          <div *ngFor="let card of cards"
+            class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
+            <img [src]="card.image" [alt]="card.alt" class="h-16 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold mb-2">{{ card.title }}</h3>
+            <p class="text-gray-600">{{ card.description }}</p>
           </div>
-        </div>      
-      </div>
-    </section>
-
-    <section class="skills py-16 ">
-      <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-9 gap-6">
-        <div class="skill-card  bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white p-4 transition-transform ease-in-out duration-[800ms] hover:scale-105 rounded-lg shadow-lg flex flex-col justify-center items-center " *ngFor="let item of skills">
-         <img class="h-12 flex items-center justify-center" src="{{item.img}}" alt="">
-          <p class="font-bold text-lg mt-4">{{item.skill}}</p>
         </div>
+      </section>
+      <section class="technologies py-16">
+        <h2 class="text-4xl font-semibold  bg-clip-text  my-4 text-center">
+          Skills<br />
+          <span class="text-base font-normal">— I can say I'm quite good at —</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div
+            class="technology-card py-8 bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white rounded-2xl overflow-hidden transition-transform ease-in-out duration-[800ms] text-center hover:scale-105 shadow-lg"
+            *ngFor="let item of skills">
+            <div class=" flex justify-center">
+              <img class="h-20 w-20" loading="lazy" [src]="item.icon" alt="Angular">
+            </div>
+            <div class="px-4 py-4">
+              <div class="font-bold text-xl mb-2">{{item.name}}</div>
+              <!-- <p class="">{{item.detail}}</p> -->
+            </div>
+            <p class="text-lg text-gray-500" *ngFor="let tool of item.more">
+              {{tool}}
+            </p>
+          </div>
+        </div>
+      </section>
+      <h2 class="text-4xl font-semibold  bg-clip-text  my-12 text-center">
+        Tools<br />
+        <span class="text-base font-normal">— Tools I Work With —</span>
+      </h2> 
+      <div *ngFor="let tool of tools" class="mb-4 flex justify-center items-center text-center ">
+        <h3 class="font-semibold text-gray-800 dark:text-white">{{ tool.category }}:</h3>
+        <p class="text-sm ms-3 text-gray-700 dark:text-gray-300">{{ tool.items.join(' / ') }}</p>
       </div>
-    </section>
+      <!-- <section class="skills py-16 ">
+        <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+        <div class="grid grid-cols-2 md:grid-cols-9 gap-6">
+          <div
+            class="skill-card  bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white p-4 transition-transform ease-in-out duration-[800ms] hover:scale-105 rounded-lg shadow-lg flex flex-col justify-center items-center "
+            *ngFor="let item of skills">
+            <img class="h-12 flex items-center justify-center" src="{{item.img}}" alt="">
+            <p class="font-bold text-lg mt-4">{{item.skill}}</p>
+          </div>
+        </div>
+      </section> -->
+    </div>
   </div>
-  </div>
- 
+
 </div>

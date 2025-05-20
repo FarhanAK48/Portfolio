@@ -1,27 +1,145 @@
-<section id="home" [ngClass]="{ 'slide-down': applyAnimation }" class="bg-gray-100 text-font dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex md:items-center">
+<section id="home" [ngClass]="{ 'slide-down': applyAnimation }"
+  class="bg-gray-100 text:md dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 ">
+  <div class="md:flex md:items-center">
     <div class=" flex-1">
-        <h1 class="bg-[#052c65] text-white text-xl font-semibold px-4 py-1 rounded-lg inline tracking-[0.2em]">Farhan Akhtar</h1>
-        <h1 class=" text-4xl font-medium py-4">Hi! I'M Farhan</h1>
-        <h1 class="text-4xl font-medium  inline">
-            I'M A DEVELOPER
-        </h1>
-        <div class="py-4  ">
-            Hi, I’m a passionate Full-Stack Developer specializing in Angular, Ionic,React js,Node.js, and modern web
-            technologies. I create responsive and dynamic web and mobile applications with clean, efficient code. Explore my
-            portfolio to see my projects, skills, and how I can help bring your ideas to life.    
-        </div>
-        <div class="py-4">
-            <p class="text-lg">I specialize in:</p>
-            <ul class="list-disc list-inside">
-                <li>Creating responsive and dynamic web applications.</li>
-                <li>Developing cross-platform mobile apps with Ionic.</li>
-                <li>Building scalable backends with Node.js and modern frameworks.</li>
-                <li>Delivering clean, maintainable, and efficient code.</li>
-            </ul>
-        </div>
+      <h1 appScrollAnimateDirections class="text-5xl md:text-7xl font-bold  mb-4">
+        Hi, I'm <span class="bg-gradient-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent">Farhan
+          Akhtar</span>
+      </h1>
+      <h2 class="text-3xl font-bold my-8">
+        I am a <span class="text-blue-600">{{ displayedText }}</span>
+      </h2>
+      <!-- <div class="py-4  ">
+        Hi, I’m a passionate Full-Stack Developer specializing in Angular, Ionic,React js,Node.js, and modern web
+        technologies. I create responsive and dynamic web and mobile applications with clean, efficient code. Explore my
+        portfolio to see my projects, skills, and how I can help bring your ideas to life.
+      </div>
+      <div class="py-4">
+        <p class="text-lg">I specialize in:</p>
+        <ul class="list-disc list-inside">
+          <li>Creating responsive and dynamic web applications.</li>
+          <li>Developing cross-platform mobile apps with Ionic.</li>
+          <li>Building scalable backends with Node.js and modern frameworks.</li>
+          <li>Delivering clean, maintainable, and efficient code.</li>
+        </ul>
+      </div> -->
 
     </div>
     <div class="flex md:justify-end md:w-[550px] ">
-        <img class="  rounded-full" src="../../../assets/WhatsApp Image 2023-09-05 at 12.17.07 PM.jpeg"  alt="Farhan Akhtar - Full-Stack Developer">
+      <img class="  rounded-full" src="../../../assets/WhatsApp Image 2023-09-05 at 12.17.07 PM.jpeg"
+        alt="Farhan Akhtar - Full-Stack Developer">
     </div>
+
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
+    <div *ngFor="let card of cards"
+      class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
+      <img [src]="card.image" [alt]="card.alt" class="h-16 mx-auto mb-4" />
+      <h3 class="text-xl font-semibold mb-2">{{ card.title }}</h3>
+      <p class="text-gray-600">{{ card.description }}</p>
+    </div>
+  </div>
+
+  <div class=" py-8">
+    <h2 class="text-2xl font-bold text-center mb-8">Technologies I Work With</h2>
+    <p class="text-center text-gray-500 dark:text-gray-400 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-10">
+      I specialize in a diverse set of front-end and back-end technologies that enable me to build modern, scalable, and
+      high-performance web and mobile applications. From crafting elegant user interfaces to developing robust APIs and
+      data-driven solutions, I utilize the right tools to deliver exceptional digital experiences.
+    </p>
+
+
+    <div class="w-full overflow-hidden bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-white py-6">
+      <div class="flex items-center" [style.transform]="'translateX(-' + scrollPosition + 'px)'"
+        [style.width]="'fit-content'">
+        <div class="flex flex-col items-center justify-center mx-20"
+          *ngFor="let tech of allTechnologies; let i = index">
+          <div class="w-32 h-32 flex items-center justify-center bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white rounded-full shadow-md p-2">
+            <img [src]="tech.logo" [alt]="tech.name" class="w-10 h-10">
+          </div>
+          <span class="mt-2 text-md font-medium">{{tech.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-3xl font-bold text-center mb-4">
+      Professional Experience
+    </h2>
+
+    <p class="text-gray-500 dark:text-gray-400 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-10">
+      With hands-on experience in full-stack development, I’ve contributed to several dynamic projects across web and
+      mobile platforms. I specialize in Angular, Ionic, Node.js, and other modern technologies to build efficient,
+      user-friendly, and scalable solutions. My work spans UI/UX design, backend integration, API development, and
+      performance optimization.
+    </p>
+  </div>
+  <div
+    class=" bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-lg rounded-xl overflow-hidden p-6 max-w-3xl mx-auto mb-6">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class=" h-28 w-28 rounded-md">
+        <img src="../../../assets/boltech_solutions_logo.jpeg" alt="">
+
+      </div>
+      <div class="ms-4">
+        <h2 class="text-2xl font-semibold ">Software Engineer</h2>
+        <p class="text-xl font-bold text-gray-500">Boltech Solutions</p>
+        <p class="text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">Lahore, Pakistan, On-site Full-time</p>
+        <p class="text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">Aug 2022 - Present</p>
+      </div>
+    </div>
+
+    <ul class="mt-4">
+      <li class="text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Contributed significantly to various projects leveraging JavaScript and modern
+        frameworks.</li>
+      <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Collaborated with cross-functional teams to design and implement high-quality
+        software.</li>
+      <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Optimized performance and stayed ahead of industry trends.</li>
+      <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Solved complex problems and adapted to evolving technologies.</li>
+    </ul>
+
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4">Skills</h2>
+    <div class="flex flex-wrap gap-2">
+
+      <span *ngFor="let skill of skills" class="text-md font-medium bg-blue-600 text-gray-200 px-3 py-2 rounded-full">
+        {{ skill }}
+      </span>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4">Academic & Professional Learning</h2>
+    <p class="text-lg text-gray-500">Education isn't just about degrees—it's about continuous growth. While my academic
+      background provided a strong foundation, I actively explore new technologies, frameworks, and methodologies to
+      stay ahead in the ever-evolving tech world.</p>
+
+  </div>
+  <div class="w-full max-w-3xl mx-auto my-4">
+    <div *ngFor="let edu of educationList; let i = index" class=" rounded-xl mb-3 shadow">
+      <button (click)="toggle(i)"
+        class="w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white hover:bg-gray-100 rounded-t-lg">
+        <span>{{ edu.title }}</span>
+        <span class="text-xl">
+          {{ activeIndex === i ? '−' : '+' }}
+        </span>
+      </button>
+
+      <div *ngIf="activeIndex === i"
+        class="px-4 rounded-b-lg py-3 sm:flex bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white text-sm ">
+        <div class="h-24 w-24">
+          <img [src]="edu.img" alt="">
+
+        </div>
+        <div class="ms-4 text-lg text-gray-500">
+          <p><strong>Institution:</strong> {{ edu.institution }}</p>
+          <p><strong>Year:</strong> {{ edu.year }}</p>
+          <p class="mt-2">{{ edu.details }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

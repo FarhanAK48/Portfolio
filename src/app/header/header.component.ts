@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   menuOpened = false;
   isDarkMode = false;
   tabs = [
-    'Home', 'Services', 'projects', 'About', 'Contact'
+    'Home', 'Services','Journey', 'projects', 'About', 'Contact'
   ];
  private sub!:Subscription;
 
@@ -55,6 +55,10 @@ export class HeaderComponent implements OnInit {
         break;
       case 'About':
         this.router.navigate(['/about']);
+        this.menuOpened = false;
+        break;
+        case 'Journey':
+        this.router.navigate(['/journey']);
         this.menuOpened = false;
         break;
       case 'Contact':

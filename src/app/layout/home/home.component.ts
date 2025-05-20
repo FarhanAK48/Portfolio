@@ -8,15 +8,162 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() {
-      this.applyAnimation = true;   
+      this.applyAnimation = true; 
+      this.allTechnologies = [...this.technologies, ...this.technologies];
+  
    }
 
   applyAnimation = false;
 
-  ngOnInit() {
-  // Delay before animation starts
+;
+roles = ['Backend Developer', 'Angular Developer', 'Fullstack Developer'];
+cards = [
+  {
+    title: 'Web Development',
+    description: 'Crafting responsive, dynamic, and scalable websites using modern web technologies.',
+    image: 'https://cdn-icons-png.flaticon.com/512/919/919827.png',
+    alt: 'Web Development'
+  },
+  {
+    title: 'Mobile Solutions',
+    description: 'Developing cross-platform mobile apps for seamless user experiences on iOS and Android.',
+    image: 'https://cdn-icons-png.flaticon.com/512/888/888879.png',
+    alt: 'Mobile Solutions'
+  },
+  {
+    title: 'Design & UX',
+    description: 'Focusing on clean design and intuitive user interfaces to enhance engagement.',
+    image: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    alt: 'Design & UX'
+  },
+  {
+    title: 'Performance',
+    description: 'Optimizing web and mobile applications for speed, responsiveness, and reliability.',
+    image: 'https://cdn-icons-png.flaticon.com/512/8832/8832171.png',
+    alt: 'Performance'
+  }
+];
+technologies = [
+  { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  { name: 'Bootstrap', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg' },
+  { name: 'Tailwind CSS', logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+  { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+  { name: 'Angular', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+  { name: 'Ionic', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg' },
+  { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+  { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
+];
+experience = [
+  {
+    img: 'https://via.placeholder.com/150',
+    info: [
+      { icon: 'https://img.icons8.com/ios-filled/20/user.png', text: 'Full Stack Developer' },
+      { icon: 'https://img.icons8.com/ios-filled/20/company.png', text: 'Tech Company XYZ' },
+      { icon: 'https://img.icons8.com/ios-filled/20/calendar.png', text: 'Jan 2022 – Present' },
+      { icon: 'https://img.icons8.com/ios-filled/20/skills.png', text: 'Angular · Node.js · SQL · Ionic' }
+    ]
+  },
+ 
+];
+skills: string[] = [
+  'Web/Android App Development',
+  'JavaScript',
+  'TypeScript',
+  'Tailwind CSS',
+  'MERN Stack',
+  'React.js',
+  'Material UI',
+  'React Native',
+  'Next.js',
+  'Next UI',
+  'GitHub',
+  'Git',
+  'OAuth',
+  'Azure Cosmos DB'
+];
+educationList = [
+  {
+    img:'../../../assets/Ghazi University.jpg',
+    title: 'Bachelor of Science in Information Technology',
+    institution: 'Ghazi University Dera Ghazi Khan',
+    year: '2017 – 2021',
+    details: 'Graduated with distinction. Focused on software engineering, algorithms, and web development.'
+  },
+  {
+    img:'../../../assets/Zakriya.jpeg',
+    title: 'FSC Pre-Engineering',
+    institution: 'Zakriya Higher Secondary School Karim Dad Qureshi',
+    year: '2015 – 2017',
+    details: 'Specialized in Science with Mathematics. Participated in coding and robotics clubs.'
+  }
+];
+
+activeIndex: number | null = null;
+displayedText = '';
+currentRoleIndex = 0;
+isDeleting = false;
+speed = 150;
+
+allTechnologies:any = [];
+scrollPosition: number = 0;
+animationFrameId: number | null = null;
+
+
+ngOnInit() {
+  this.startAnimation()
+  this.typeEffect();
+}
+toggle(index: number): void {
+  this.activeIndex = this.activeIndex === index ? null : index;
+}
+
+typeEffect() {
+  const fullText = this.roles[this.currentRoleIndex];
+  this.displayedText = this.isDeleting
+    ? fullText.substring(0, this.displayedText.length - 1)
+    : fullText.substring(0, this.displayedText.length + 1);
+    console.log('***',this.displayedText)
+  let typingSpeed = this.isDeleting ? 60 : this.speed;
+console.log('TS***',typingSpeed)
+  if (!this.isDeleting && this.displayedText === fullText) {
+    typingSpeed = 1000;
+    this.isDeleting = true;
+    console.log('AAA')
+  } else if (this.isDeleting && this.displayedText === '') {
+    this.isDeleting = false;
+    this.currentRoleIndex = (this.currentRoleIndex + 1) % this.roles.length;
+    typingSpeed = 300;
+    console.log('ABA')
+
   }
 
-  scrollToSection(){}
+  setTimeout(() => this.typeEffect(), typingSpeed);
+}
+
+ngOnDestroy(): void {
+  if (this.animationFrameId !== null) {
+    cancelAnimationFrame(this.animationFrameId);
+  }
+}
+
+startAnimation(): void {
+  const animationSpeed = 0.5; // pixels per frame
+  
+  const scroll = () => {
+    this.scrollPosition += animationSpeed;
+    
+    // Reset position when we've scrolled through the first set
+    if (this.scrollPosition >= this.technologies.length * 130) {
+      this.scrollPosition = 0;
+    }
+    
+    this.animationFrameId = requestAnimationFrame(scroll);
+  };
+  
+  this.animationFrameId = requestAnimationFrame(scroll);
+}
 
 }

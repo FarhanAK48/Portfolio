@@ -1,31 +1,74 @@
 <div [ngClass]="{ 'slide-down': applyAnimation }" id="about"
-  class="bg-gray-100 text-font dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
-  <div class="md:w-[550px] flex md:justify-end">
-    <img class="max-w-full h-auto rounded-full" src="../../../assets/WhatsApp Image 2023-09-05 at 12.17.07 PM.jpeg"
-      alt="Farhan Akhtar - Full-Stack Developer" loading="lazy">
-  </div>
-  <div class="flex-1 mt-6 md:mt-0 md:ml-10">
-    <h1 class="text-4xl font-medium">About Me</h1>
-    <div class="py-4">
-      <p>
-        Hello! I'm <span class="font-semibold">Farhan</span>, a skilled Full-Stack Developer with a strong passion for
-        crafting dynamic and user-friendly applications.
-        With expertise in <span class="font-semibold">Angular, Ionic,React Js Node.js</span>, and a deep understanding
-        of modern web development technologies, I
-        bring ideas to life by building scalable and intuitive solutions.
-      </p>
-      <p class="mt-4">
-        Over the years, I’ve worked on diverse projects, from developing responsive websites to creating seamless mobile
-        apps. I strive
-        for clean, efficient code and a great user experience.
-      </p>
-      <p class="mt-4">
-        When I’m not coding, you’ll find me exploring new tech trends or working on passion projects that push my
-        creativity.
-      </p>
+  class="bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 ">
+ <div class="md:flex items-center">
+   <div class="md:w-[550px] flex md:justify-end">
+     <img class="max-w-full h-auto rounded-full" src="../../../assets/WhatsApp Image 2023-09-05 at 12.17.07 PM.jpeg"
+       alt="Farhan Akhtar - Full-Stack Developer" loading="lazy">
+   </div>
+   <div class="flex-1 mt-6 md:mt-0 md:ml-10">
+     <h1 class="text-4xl font-medium">About Me</h1>
+     <div class="py-4">
+       <p>
+         Hello! I'm <span class="font-semibold">Farhan</span>, a skilled Full-Stack Developer with a strong passion for
+         crafting dynamic and user-friendly applications.
+         With expertise in <span class="font-semibold">Angular, Ionic,React Js Node.js</span>, and a deep understanding
+         of modern web development technologies, I
+         bring ideas to life by building scalable and intuitive solutions.
+       </p>
+       <p class="mt-4">
+         Over the years, I’ve worked on diverse projects, from developing responsive websites to creating seamless mobile
+         apps. I strive
+         for clean, efficient code and a great user experience.
+       </p>
+       <p class="mt-4">
+         When I’m not coding, you’ll find me exploring new tech trends or working on passion projects that push my
+         creativity.
+       </p>
+     </div>
+     <button (click)="downloadCV()" class="mt-4 px-6 py-2 bg-[#052c65] text-white rounded-lg shadow hover:bg-[#031c45]">
+       Download Resume
+     </button>
+   </div>
+ </div>
+ <h2 class="text-4xl font-semibold  bg-clip-text  my-10 text-center">
+  Languages<br />
+  <span class="text-base font-normal">— I speak —</span>
+</h2>
+<div class="grid grid-cols-1  sm:max-w-5xl mx-auto my-16">
+  <div *ngFor="let lang of languages" class="sm:flex justify-between sm:mx-8 my-4 md:mx-4 lg:mx-8 p-4s rounded-lg shadow-sm">
+    <!-- Language and Proficiency -->
+    <div>
+      <p class="font-bold text-2xl">{{ lang.name }}</p>
+      <p class="text-lg mt-1 text-gray-500">{{ lang.level }}</p>
     </div>
-    <button (click)="downloadCV()" class="mt-4 px-6 py-2 bg-[#052c65] text-white rounded-lg shadow hover:bg-[#031c45]">
-      Download Resume
-    </button>
+
+    <!-- Dots -->
+    <div class="flex gap-2 items-center">
+      <ng-container *ngFor="let dot of [].constructor(10); let i = index">
+        <div
+          class="w-7 h-7 rounded-full"
+          [ngClass]="i < lang.filled ? 'bg-blue-600' : 'bg-gray-300'"
+        ></div>
+      </ng-container>
+    </div>
   </div>
+</div>
+<div>
+  <h2 class="text-4xl font-semibold  bg-clip-text  my-10 text-center">
+    Hobbies<br />
+    <span class="text-base font-normal">— When I'm not coding, I enjoy going to the gym, swimming, watching movies, and exploring new places. —</span>
+  </h2>
+  
+  <div class="grid grid-cols-1 my-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center sm:max-w-5xl mx-auto">
+    <div *ngFor="let activity of activities" class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white w-44 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+      <div class="p-6 flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center bg-indigo-50 rounded-full mb-4">
+          <img [src]="activity.icon" [alt]="activity.title" class="w-10 h-10">
+        </div>
+        <h3 class="text-lg font-semibold">{{ activity.title }}</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
 </div>
