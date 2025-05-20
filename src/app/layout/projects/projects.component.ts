@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -141,7 +141,16 @@ export class ProjectsComponent implements OnInit {
     this.applyAnimation = true;
   }
   applyAnimation = false;
+showButton = false;
 
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.showButton = window.pageYOffset > 300; 
+}
+
+scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+}
 
   ngOnInit(): void {
 

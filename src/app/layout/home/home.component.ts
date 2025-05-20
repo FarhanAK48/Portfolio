@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -56,6 +56,12 @@ technologies = [
   { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
   { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
 ];
+ bulletPoints = [
+  "Contributed significantly to various projects leveraging JavaScript and modern frameworks.",
+  "Collaborated with cross-functional teams to design and implement high-quality software.",
+  "Optimized performance and stayed ahead of industry trends.",
+  "Solved complex problems and adapted to evolving technologies."
+];
 experience = [
   {
     img: 'https://via.placeholder.com/150',
@@ -98,6 +104,13 @@ educationList = [
     institution: 'Zakriya Higher Secondary School Karim Dad Qureshi',
     year: '2015 – 2017',
     details: 'Specialized in Science with Mathematics. Participated in coding and robotics clubs.'
+  },
+  {
+    img:'../../../assets/Zakriya.jpeg',
+    title: 'Matriculation',
+    institution: 'Faiz e Aam public School Karim Dad Qureshi',
+    year: '2013 – 2015',
+    details: 'Specialized in Science with Mathematics. '
   }
 ];
 
@@ -110,7 +123,16 @@ speed = 150;
 allTechnologies:any = [];
 scrollPosition: number = 0;
 animationFrameId: number | null = null;
+showButton = false;
 
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.showButton = window.pageYOffset > 300; 
+}
+
+scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 ngOnInit() {
   this.startAnimation()

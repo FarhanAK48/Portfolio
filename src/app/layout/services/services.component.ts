@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -138,7 +138,17 @@ export class ServicesComponent implements OnInit {
   //   { skill: 'Ionic', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg' },
   //   { skill: 'React Js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   //   { skill: 'Node js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' }
-  // ];  
+  // ];
+  showButton = false;
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showButton = window.pageYOffset > 300; 
+  }
+  
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+  }  
 
   ngOnInit(): void {
   }

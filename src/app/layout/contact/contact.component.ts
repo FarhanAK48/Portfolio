@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -25,12 +25,20 @@ export class ContactComponent implements OnInit {
   ];
   applyAnimation = false;
   constructor() {
-    // setTimeout(() => {
       this.applyAnimation = true;
-    // }, 0); 
+  
    }
 
+ showButton = false;
  
+ @HostListener('window:scroll', [])
+ onWindowScroll() {
+   this.showButton = window.pageYOffset > 300; 
+ }
+ 
+ scrollToTop() {
+   window.scrollTo({ top: 0, behavior: 'smooth' }); 
+ }
 
   ngOnInit(): void {
   }

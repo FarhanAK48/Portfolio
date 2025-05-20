@@ -1,7 +1,7 @@
 <section id="home" [ngClass]="{ 'slide-down': applyAnimation }"
-  class="bg-gray-100 text:md dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 ">
+  class="bg-gray-100 text:md dark:bg-[#121212] text-gray-500 dark:text-gray-400 p-6 py-10 ">
   <div class="md:flex md:items-center">
-    <div class=" flex-1">
+    <div class=" flex-1 text-gray-800 dark:text-white">
       <h1 appScrollAnimateDirections class="text-5xl md:text-7xl font-bold  mb-4">
         Hi, I'm <span class="bg-gradient-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent">Farhan
           Akhtar</span>
@@ -35,15 +35,15 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
     <div *ngFor="let card of cards"
-      class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
+      class="bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
       <img [src]="card.image" [alt]="card.alt" class="h-16 mx-auto mb-4" />
-      <h3 class="text-xl font-semibold mb-2">{{ card.title }}</h3>
-      <p class="text-gray-600">{{ card.description }}</p>
+      <h3 class="text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2">{{ card.title }}</h3>
+      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium">{{ card.description }}</p>
     </div>
   </div>
 
   <div class=" py-8">
-    <h2 class="text-2xl font-bold text-center mb-8">Technologies I Work With</h2>
+    <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug font-bold text-center mb-8">Technologies I Work With</h2>
     <p class="text-center text-gray-500 dark:text-gray-400 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-10">
       I specialize in a diverse set of front-end and back-end technologies that enable me to build modern, scalable, and
       high-performance web and mobile applications. From crafting elegant user interfaces to developing robust APIs and
@@ -66,7 +66,7 @@
   </div>
 
   <div>
-    <h2 class="text-3xl font-bold text-center mb-4">
+    <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug text-center mb-4">
       Professional Experience
     </h2>
 
@@ -85,20 +85,19 @@
 
       </div>
       <div class="ms-4">
-        <h2 class="text-2xl font-semibold ">Software Engineer</h2>
-        <p class="text-xl font-bold text-gray-500">Boltech Solutions</p>
-        <p class="text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">Lahore, Pakistan, On-site Full-time</p>
-        <p class="text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">Aug 2022 - Present</p>
+        <h2 class="text-gray-800 dark:text-white text-2xl font-semibold ">Software Engineer</h2>
+        <p class=" text-gray-800 dark:text-white text-xl font-bold text-gray-500">Boltech Solutions</p>
+        <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium ">Lahore, Pakistan, On-site Full-time</p>
+        <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium ">Aug 2022 - Present</p>
       </div>
     </div>
 
     <ul class="mt-4">
-      <li class="text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Contributed significantly to various projects leveraging JavaScript and modern
-        frameworks.</li>
-      <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Collaborated with cross-functional teams to design and implement high-quality
+      <li *ngFor="let item of bulletPoints" class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium ">• {{item}}</li>
+      <!-- <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Collaborated with cross-functional teams to design and implement high-quality
         software.</li>
       <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Optimized performance and stayed ahead of industry trends.</li>
-      <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Solved complex problems and adapted to evolving technologies.</li>
+      <li class=" text-gray-500 dark:text-gray-400 sm:text-font-l text-font-s ">• Solved complex problems and adapted to evolving technologies.</li> -->
     </ul>
 
     <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4">Skills</h2>
@@ -110,9 +109,9 @@
     </div>
   </div>
 
-  <div class="text-center">
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4">Academic & Professional Learning</h2>
-    <p class="text-lg text-gray-500">Education isn't just about degrees—it's about continuous growth. While my academic
+  <div class="text-center mt-8">
+    <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4">Academic & Professional Learning</h2>
+    <p class="text-base sm:text-lg md:text-xl font-normal leading-relaxed">Education isn't just about degrees—it's about continuous growth. While my academic
       background provided a strong foundation, I actively explore new technologies, frameworks, and methodologies to
       stay ahead in the ever-evolving tech world.</p>
 
@@ -121,25 +120,36 @@
     <div *ngFor="let edu of educationList; let i = index" class=" rounded-xl mb-3 shadow">
       <button (click)="toggle(i)"
         class="w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white hover:bg-gray-100 rounded-t-lg">
-        <span>{{ edu.title }}</span>
+        <span class="text-gray-800 dark:text-white">{{ edu.title }}</span>
         <span class="text-xl">
           {{ activeIndex === i ? '−' : '+' }}
         </span>
       </button>
 
       <div *ngIf="activeIndex === i"
-        class="px-4 rounded-b-lg py-3 sm:flex bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white text-sm ">
+        class="px-4 rounded-b-lg py-3 sm:flex bg-white dark:bg-[#1e1e1e] text-sm ">
         <div class="h-24 w-24">
           <img [src]="edu.img" alt="">
 
         </div>
-        <div class="ms-4 text-lg text-gray-500">
-          <p><strong>Institution:</strong> {{ edu.institution }}</p>
-          <p><strong>Year:</strong> {{ edu.year }}</p>
+        <div class="ms-4 text-lg text-sm sm:text-base font-medium">
+          <p><strong class="text-gray-800 dark:text-white">Institution:</strong> {{ edu.institution }}</p>
+          <p><strong class="text-gray-800 dark:text-white">Year:</strong> {{ edu.year }}</p>
           <p class="mt-2">{{ edu.details }}</p>
 
         </div>
       </div>
     </div>
   </div>
+  <button
+  (click)="scrollToTop()"
+  class="fixed bottom-8 z-10 right-8 p-3 bg-blue-600 text-white rounded-full shadow-xl transition-transform duration-300"
+  [class.translate-x-0]="showButton"
+  [class.translate-x-20]="!showButton"
+  aria-label="Scroll to top"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
 </section>

@@ -1,12 +1,12 @@
 <div  [ngClass]="{ 'slide-down': applyAnimation }"
-    class="contact-section text-font bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
+    class="contact-section text-font bg-gray-100 dark:bg-[#121212] text-gray-500 dark:text-gray-400 p-6 py-10 lg:px-20 md:flex items-center">
     <div class=" flex-1">
 
 
-        <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-        <p class="text-center mb-12">Feel free to reach out for collaborations, inquiries, or just to connect!</p>
+        <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug text-center mb-8">Get in Touch</h2>
+        <p class="text-center text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-12">Feel free to reach out for collaborations, inquiries, or just to connect!</p>
         <div class="contact-info-cards bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] py-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Information</h2>
+            <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug text-center mb-8">Contact Information</h2>
             <div class=" rounded-2xl py-5 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div *ngFor="let card of contactCards" class="card transition-transform duration-[800ms] hover:scale-110 bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white p-8 rounded-2xl shadow-lg text-center">
                     <div class="icon mb-4 flex flex-col items-center text-gray-600 dark:text-white">
@@ -25,7 +25,7 @@
                       </div>
                     </div>
                     <h3 class="text-xl font-bold mb-2">{{ card.title }}</h3>
-                    <p [innerHTML]="card.content"></p>
+                    <p class="text-gray-500 dark:text-gray-400 " [innerHTML]="card.content"></p>
                   </div>
             </div>
         </div>
@@ -59,4 +59,15 @@
         </div>
 
     </div>
+    <button
+    (click)="scrollToTop()"
+    class="fixed bottom-8 z-10 right-8 p-3 bg-blue-600 text-white rounded-full shadow-xl transition-transform duration-300"
+    [class.translate-x-0]="showButton"
+    [class.translate-x-20]="!showButton"
+    aria-label="Scroll to top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 </div>

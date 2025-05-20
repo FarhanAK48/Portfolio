@@ -1,7 +1,47 @@
-<div [ngClass]="{ 'slide-down': applyAnimation }" class="bg-white dark:bg-[#222222] text-black text-font dark:text-[#f5f5f5] p-6 py-10 lg:px-20 mx-auto md:flex justify-between">
-  
-  <div class="contact-info text-center md:text-left flex flex-col items-start space-y-2 leading-relaxed">
-    <p class="text-lg font-semibold mb-1">Contact Information</p>
+<div [ngClass]="{ 'slide-down': applyAnimation }" class="bg-white relative overflow-hidden dark:bg-[#222222] text-gray-500 dark:text-gray-400 text-font  p-6 py-10 lg:px-24 mx-auto md:flex justify-between space-x-6">
+  <!-- <ngx-particles
+  [id]="'tsparticles'"
+  [options]="particlesOptions"
+  style="width: 100%; height: 100%;"
+></ngx-particles> -->
+<div
+*ngFor="let particle of particles"
+class="particle absolute rounded-full"
+[ngStyle]="{
+  width: particle.size + 'px',
+  height: particle.size + 'px',
+  backgroundColor: particle.color,
+  left: particle.left + '%',
+  top: particle.top + '%',
+  animationDuration: particle.duration + 's',
+  animationDelay: particle.delay + 's'
+}"
+></div>
+
+  <div class="contact-info text-center md:text-left flex flex-1 flex-col items-start space-y-2 text-base sm:text-lg md:text-xl font-normal leading-relaxed">
+    <h2 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">M Farhan Akhtar</h2>
+    <p class="text-base sm:text-lg md:text-xl font-normal leading-relaxed">Crafting digital experiences with clean code and innovative solutions.</p>
+    <div class="flex space-x-4">
+      <a href="https://github.com/FarhanAK48/" class="text-gray-500 hover:text-gray-400" target="_blank">
+        <span class="sr-only">GitHub</span>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#000000 dark:[#ffffff]">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/muhammad-farhan-akhtar/" class="text-gray-500 hover:text-gray-400" target="_blank">
+        <span class="sr-only">LinkedIn</span>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#0A66C2">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/muhammad-farhan-akhtar/" class="text-gray-500 hover:text-gray-400" target="_blank">
+        <span class="sr-only">Facebook</span>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#1877F2">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+        </svg>
+      </a>
+    </div>
+    <!-- <p class="text-lg font-semibold mb-1">Contact Information</p>
     <p class="text-sm font-semibold">Contact: <span class="font-normal">+92 347 1701646</span></p>
     <p class="text-sm font-semibold">WhatsApp: <span class="font-normal">+92 347 1701646</span></p>
     <p class="text-sm font-semibold">
@@ -12,19 +52,47 @@
     </p>
     <p class="text-sm font-semibold flex justify-start">
       Location:<span class="font-normal ml-1"> Lahore, Pakistan</span>
-    </p>
+    </p> -->
   </div>
 
-  <div class="flex flex-col mb-4">
-    <p class="text-lg font-semibold">Useful Links</p>
-    <a class="text-sm cursor-pointer mb-1 hover:text-[#0788FF]" 
+  <div class="flex flex-1 flex-col my-4 sm:my-0">
+    <p class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">Useful Links</p>
+    <a class="text-sm sm:text-base font-medium cursor-pointer mb-1 inline hover:text-[#0788FF]" 
        (click)="changeTab(label)" 
        *ngFor="let label of tabs">
       {{label}}
     </a>
   </div>
 
-  <div class="social-media flex flex-col space-y-2">
+  <div class="flex-1">
+    <p class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">Useful Links</p>
+
+    <div class="flex flex-wrap items-center justify-start gap-2">
+      <span *ngFor="let tech of techStack" class="px-3 py-1 text-md font-medium bg-gray-300 dark:bg-gray-500 text-gray-800 dark:text-gray-300 rounded-full">
+        {{ tech }}
+      </span>
+    </div>
+  </div>
+  <section class=" px-4 text-base flex-1 sm:text-lg md:text-xl font-normal leading-relaxed">
+    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-4">Get In Touch</h2>
+    
+    <p class="flex items-center text-gray-600 dark:text-gray-300 text-base sm:text-lg mb-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-black dark:text-white" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2.94 4.44A2 2 0 014.5 4h11a2 2 0 011.56.44L10 9.5 2.94 4.44zM2 6.06V14a2 2 0 002 2h12a2 2 0 002-2V6.06l-7.4 5.02a1 1 0 01-1.2 0L2 6.06z"/>
+      </svg>
+      mfarhanakhtar48@gmail.com
+    </p>
+    
+    <p class="text-gray-600 dark:text-gray-400 mb-6">
+      Available for freelance work and collaborations.
+    </p>
+    
+    <a href="mailto:fakherzamanofficial@gmail.com"
+       class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition">
+      Contact Me
+    </a>
+  </section>
+  <!-- <div class="social-media flex flex-col space-y-2">
     <p class="text-lg font-semibold">Follow Me</p>
     <div class="flex space-x-4">
       <a href="https://github.com/FarhanAK48/" class="text-gray-500 hover:text-gray-400" target="_blank">
@@ -41,6 +109,6 @@
       </a>
   
     </div>
-  </div>
+  </div> -->
 
 </div>

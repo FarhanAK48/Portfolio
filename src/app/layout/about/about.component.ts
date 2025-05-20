@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -38,13 +38,22 @@ export class AboutComponent implements OnInit {
     }
   ];
   applyAnimation = false;
+showButton = false;
 
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.showButton = window.pageYOffset > 300; 
+}
+
+scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
   ngOnInit(): void {
   }
   downloadCV() {
     const link = document.createElement('a');
-    link.href = 'assets/Farhan.pdf'; // Path to the CV file
-    link.download = 'My_CV.pdf'; // Name of the file when downloaded
+    link.href = 'assets/Farhan.pdf'; 
+    link.download = 'My_CV.pdf'; 
     link.click();
   }
 

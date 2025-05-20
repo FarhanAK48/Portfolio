@@ -1,10 +1,10 @@
 <div [ngClass]="{ 'slide-down': applyAnimation }"
-  class="bg-gray-100 text-font dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0] p-6 py-10 lg:px-20 md:flex items-center">
+  class="bg-gray-100 text-font dark:bg-[#121212] text-gray-500 dark:text-gray-400 p-6 py-10 lg:px-20 md:flex items-center">
   <div class="">
 
 
     <section class="services-intro text-center py-2">
-      <h2 class="text-4xl font-semibold  bg-clip-text  my-4 text-center">
+      <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4 text-center">
         Services<br />
         <span class="text-base font-normal">— What I offer —</span>
       </h2>
@@ -15,13 +15,13 @@
           <div *ngFor="let card of cards"
             class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
             <img [src]="card.image" [alt]="card.alt" class="h-16 mx-auto mb-4" />
-            <h3 class="text-xl font-semibold mb-2">{{ card.title }}</h3>
-            <p class="text-gray-600">{{ card.description }}</p>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2">{{ card.title }}</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium">{{ card.description }}</p>
           </div>
         </div>
       </section>
       <section class="technologies py-16">
-        <h2 class="text-4xl font-semibold  bg-clip-text  my-4 text-center">
+        <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug  my-4 text-center">
           Skills<br />
           <span class="text-base font-normal">— I can say I'm quite good at —</span>
         </h2>
@@ -33,22 +33,22 @@
               <img class="h-20 w-20" loading="lazy" [src]="item.icon" alt="Angular">
             </div>
             <div class="px-4 py-4">
-              <div class="font-bold text-xl mb-2">{{item.name}}</div>
+              <div class="text-gray-800 dark:text-white text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2">{{item.name}}</div>
               <!-- <p class="">{{item.detail}}</p> -->
             </div>
-            <p class="text-lg text-gray-500" *ngFor="let tool of item.more">
+            <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium" *ngFor="let tool of item.more">
               {{tool}}
             </p>
           </div>
         </div>
       </section>
-      <h2 class="text-4xl font-semibold  bg-clip-text  my-12 text-center">
+      <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-12 text-center">
         Tools<br />
         <span class="text-base font-normal">— Tools I Work With —</span>
       </h2> 
       <div *ngFor="let tool of tools" class="mb-4 flex justify-center items-center text-center ">
         <h3 class="font-semibold text-gray-800 dark:text-white">{{ tool.category }}:</h3>
-        <p class="text-sm ms-3 text-gray-700 dark:text-gray-300">{{ tool.items.join(' / ') }}</p>
+        <p class="text-sm sm:text-base ms-3 text-gray-500 dark:text-gray-400">{{ tool.items.join(' / ') }}</p>
       </div>
       <!-- <section class="skills py-16 ">
         <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
@@ -63,5 +63,15 @@
       </section> -->
     </div>
   </div>
-
+  <button
+  (click)="scrollToTop()"
+  class="fixed bottom-8 z-10 right-8 p-3 bg-blue-600 text-white rounded-full shadow-xl transition-transform duration-300"
+  [class.translate-x-0]="showButton"
+  [class.translate-x-20]="!showButton"
+  aria-label="Scroll to top"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
 </div>

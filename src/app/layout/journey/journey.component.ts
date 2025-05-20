@@ -92,14 +92,13 @@ timelineItems = [
 
 showButton = false;
 
-// Listen to window scroll events
 @HostListener('window:scroll', [])
 onWindowScroll() {
-  this.showButton = window.pageYOffset > 300; // Show button if scrolled down 300px
+  this.showButton = window.pageYOffset > 300; 
 }
 
 scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' }); 
 }
   ngOnInit(): void {
   }

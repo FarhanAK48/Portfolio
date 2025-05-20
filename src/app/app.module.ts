@@ -8,7 +8,6 @@ import { HomeModule } from './layout/home/home.module';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutModule } from './layout/layout.module';
 import { ClickedOutsideDirective } from './_directive/clickoutside.directive';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +18,7 @@ import { ClickedOutsideDirective } from './_directive/clickoutside.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
