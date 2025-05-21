@@ -38,6 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   changeTab(onboardStep: string) {
+    document.body.classList.remove('overflow-hidden');
     this.selectedTab = onboardStep;
     localStorage.setItem('selectedTab', this.selectedTab);
     switch (onboardStep) {
@@ -73,11 +74,17 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.menuOpened = !this.menuOpened
+    if (this.menuOpened) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
   }
 
 
   clickOut() {
     this.menuOpened = false;
+    document.body.classList.remove('overflow-hidden');
     
   }
 
