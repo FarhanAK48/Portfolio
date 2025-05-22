@@ -26,13 +26,13 @@
                 
                 <!-- Card content (right side on mobile) -->
                 <div class="flex-1 min-w-0">
-                    <div class="rounded-xl bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-[#e0e0e0] p-4 shadow-md border-l-4"
-                        [ngClass]="i % 2 === 0 ? 'border-blue-600' : 'border-blue-900'">
+                    <div class="rounded-xl bg-white dark:bg-[#1e1e1e] text-gray-600 border-blue-600 dark:text-[#e0e0e0] p-4 shadow-md border-l-4"
+                        >
                         <p class="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400">{{ item.date }}</p>
                         <h3 class="mb-1 text-base font-bold text-slate-800 dark:text-white">{{ item.title }}</h3>
                         <p class="text-xs font-medium text-gray-500 dark:text-gray-400">@ {{ item.company }}</p>
                         <p class="text-xs font-medium text-slate-400 dark:text-slate-500">{{ item.location }} · {{ item.type }}</p>
-                        <span class="text-xs font-medium text-green-600 dark:text-green-400 font-medium mt-1 inline-block">{{ item.status }}</span>
+                        <span class="text-xs text-green-600 dark:text-green-400 font-medium mt-1 inline-block">{{ item.status }}</span>
     
                         <ul class="mt-2 list-disc text-sm font-medium sm:text-base list-inside  text-slate-600 dark:text-slate-400 space-y-1">
                             <li *ngFor="let point of item.contributions">{{ point }}</li>
