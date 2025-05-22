@@ -76,7 +76,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Thurrock Training Consultancy',
       description:
         'A Study Abroad app helping students find study visas and plan their future. Built with Angular and Laravel, featuring authentication, responsive UI, core modules, and smooth API integration.',
-      img: '../../../assets/TTC.png'
+      img: '../../../assets/TTC_-removebg-preview.png'
     },
     {
       title: 'Yoderlay',
@@ -196,7 +196,7 @@ export class ProjectsComponent implements OnInit {
 
   projectDetails: any = [
     {
-      image: '../../../assets/TTC.png',
+      image: '../../../assets/TTC_-removebg-preview.png',
       projectName: 'Thurrock Training Consultancy',
       company: '@BolTech Solutions',
       start: 'May 2023',
