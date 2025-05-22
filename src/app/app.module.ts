@@ -8,12 +8,16 @@ import { HomeModule } from './layout/home/home.module';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutModule } from './layout/layout.module';
 import { ClickedOutsideDirective } from './_directive/clickoutside.directive';
+import { AnimateLeftDirective } from './_directive/animate-left.directive';
+import { AnimateRightDirective } from './_directive/animate-right.directive';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ClickedOutsideDirective
+    ClickedOutsideDirective,
+    AnimateLeftDirective,
+    AnimateRightDirective
   ],
   imports: [
     BrowserModule,

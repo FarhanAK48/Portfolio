@@ -106,9 +106,9 @@ educationList = [
     details: 'Specialized in Science with Mathematics. Participated in coding and robotics clubs.'
   },
   {
-    img:'../../../assets/Zakriya.jpeg',
+    img:'../../../assets/faiz-aam.jpeg',
     title: 'Matriculation',
-    institution: 'Faiz e Aam public School Karim Dad Qureshi',
+    institution: 'Faiz e Aam Science College',
     year: '2013 – 2015',
     details: 'Specialized in Science with Mathematics. '
   }

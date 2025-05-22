@@ -80,6 +80,36 @@ font-family: sans-serif;
     }
 
 
- 
+ //Left right animation
+ [appAnimateLeft] {
+  opacity: 0.5;
+  transform: translateX(-60px);
+  transition: all 1s ease-in-out;
+}
+
+/* Triggered class via HostBinding */
+.shows {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+[appAnimateRight] {
+  opacity: 0.5;
+  animation: appear linear;
+  animation-timeline: view();
+  transform: translateX(80px);
+  transition: all 1s linear;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// body {
+//   padding-top: 80px; // height of header
+// }
   
  
