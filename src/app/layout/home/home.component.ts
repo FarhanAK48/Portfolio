@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   applyAnimation = false;
 
 ;
-roles = ['Software Engineer', 'Angular Specialist', 'Mobile App Developer'];
+roles = ['Software Engineer', 'Angular Specialist','React Enthusiast', 'Mobile App Developer', 'Node js Enthusiast'];
 cards = [
   {
     title: 'Web Development',
@@ -172,8 +172,7 @@ ngOnDestroy(): void {
 }
 
 startAnimation(): void {
-  const animationSpeed = 0.5; // pixels per frame
-  
+  const animationSpeed = 0.8; 
   const scroll = () => {
     this.scrollPosition += animationSpeed;
     
