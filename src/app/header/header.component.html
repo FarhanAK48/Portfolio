@@ -143,7 +143,7 @@
     <!-- Tabs -->
     <a *ngFor="let label of tabs" (click)="changeTab(label)"
       [ngClass]="{'tab-color': selectedTab === label}"
-      class="text-lg font-medium hover:text-[#0788FF] leading-6 transition-transform duration-300 flex items-center hover:scale-105 cursor-pointer">
+      class="text-xl font-medium hover:text-[#0788FF] leading-6 transition-transform duration-300 flex items-center hover:scale-105 cursor-pointer">
       {{ label }}
     </a>
   </div>
@@ -170,7 +170,7 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a class="-mx-3 block rounded-lg transition-transform duration-300 hover:scale-105 px-3 py-2 text-base font-semibold leading-7 bg-white dark:bg-[#222222] text-black dark:text-[#f5f5f5]"
+            <a class="-mx-3 block rounded-lg transition-transform duration-300 hover:scale-105 px-3 py-2 text-base font-medium leading-7 bg-white dark:bg-[#222222] text-black dark:text-[#f5f5f5]"
               *ngFor="let item of tabs" (click)="changeTab(item)">{{ item }}</a>
           </div>
         </div>
