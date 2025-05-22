@@ -70,17 +70,31 @@
     </p>
 
 
-    <div class="w-full overflow-hidden bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-white py-6">
+    <div  (mouseenter)="onMouseEnter()" 
+    (mouseleave)="onMouseLeave()" class="w-full overflow-hidden hidden md:flex bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-white py-6">
       <div class="flex items-center" [style.transform]="'translateX(-' + scrollPosition + 'px)'"
         [style.width]="'fit-content'">
         <div class="flex flex-col items-center justify-center mx-20"
           *ngFor="let tech of allTechnologies; let i = index">
           <div
-            class="w-32 h-32 flex items-center justify-center bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white rounded-full shadow-md p-2">
-            <img [src]="tech.logo" [alt]="tech.name" class="w-10 h-10">
+            class="w-32 h-32 flex items-center justify-center  text-gray-600 dark:text-white rounded-full p-2">
+            <img [src]="tech.logo" [alt]="tech.name" class="w-16 h-16">
           </div>
           <span class="mt-2 text-md font-medium">{{tech.name}}</span>
         </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 px-6 md:hidden">
+      <div
+        class="flex flex-col items-center justify-center"
+        *ngFor="let tech of technologies"
+      >
+        <div
+          class="w-20 h-20 flex items-center justify-center bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white rounded-full shadow-md p-2"
+        >
+          <img [src]="tech.logo" [alt]="tech.name" class="w-12 h-12" />
+        </div>
+        <span class="mt-2 text-md font-medium">{{ tech.name }}</span>
       </div>
     </div>
   </div>

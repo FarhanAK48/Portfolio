@@ -171,13 +171,32 @@ ngOnDestroy(): void {
   }
 }
 
+// startAnimation(): void {
+//   const animationSpeed = 0.5; 
+//   const scroll = () => {
+//     this.scrollPosition += animationSpeed;
+    
+//     // Reset position when we've scrolled through the first set
+//     if (this.scrollPosition >= this.technologies.length * 140) {
+//       this.scrollPosition = 0;
+//     }
+    
+//     this.animationFrameId = requestAnimationFrame(scroll);
+//   };
+  
+//   this.animationFrameId = requestAnimationFrame(scroll);
+// }
 startAnimation(): void {
-  const animationSpeed = 0.8; 
+  const animationSpeed = 0.5;
+  const itemWidth = 200;
+  const singleSetWidth = this.technologies.length * itemWidth;
+  
   const scroll = () => {
     this.scrollPosition += animationSpeed;
     
-    // Reset position when we've scrolled through the first set
-    if (this.scrollPosition >= this.technologies.length * 130) {
+    // Reset when we've scrolled through one set
+    // Since we have 3 identical sets, the reset is invisible
+    if (this.scrollPosition >= singleSetWidth) {
       this.scrollPosition = 0;
     }
     
@@ -187,4 +206,19 @@ startAnimation(): void {
   this.animationFrameId = requestAnimationFrame(scroll);
 }
 
+stopAnimation(): void {
+  if (this.animationFrameId) {
+    cancelAnimationFrame(this.animationFrameId);
+    this.animationFrameId = null;
+  }
+}
+
+// Optional: Pause animation on hover
+onMouseEnter(): void {
+  this.stopAnimation();
+}
+
+onMouseLeave(): void {
+  this.startAnimation();
+}
 }
