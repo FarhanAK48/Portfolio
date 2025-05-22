@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   applyAnimation = false;
 
 ;
-roles = ['Backend Developer', 'Angular Developer', 'Fullstack Developer'];
+roles = ['Software Engineer', 'Angular Specialist', 'Mobile App Developer'];
 cards = [
   {
     title: 'Web Development',
