@@ -46,7 +46,7 @@
         Tools<br />
         <span class="text-base font-normal">— Tools I Work With —</span>
       </h2> 
-      <div *ngFor="let tool of tools" class="mb-4 flex justify-center items-center text-center ">
+      <div *ngFor="let tool of tools" class="mb-4 flex sm:justify-center sm:items-center sm:text-center text:start">
         <h3 class="font-semibold text-gray-800 dark:text-white">{{ tool.category }}:</h3>
         <p class="text-sm sm:text-base ms-3 text-gray-500 dark:text-gray-400">{{ tool.items.join(' / ') }}</p>
       </div>
