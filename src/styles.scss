@@ -7,9 +7,9 @@
 
    
 font-family: sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: all 0.3s ease;
+    // background-color: var(--background-color);
+    // color: var(--text-color);
+    // transition: all 0.3s ease;
   }
 
   @keyframes slideDown {
@@ -30,59 +30,59 @@ font-family: sans-serif;
     animation: slideDown 0.7s ease-in-out;
   }
 
-  .text-font-s {
-    font-size: 15px;
-    font-weight: 400; /* normal */
-  }
+  // .text-font-s {
+  //   font-size: 15px;
+  //   font-weight: 400; /* normal */
+  // }
   
-  .main-heading-s {
-    font-size: 24px;
-    font-weight: 700; /* bold */
-  }
+  // .main-heading-s {
+  //   font-size: 24px;
+  //   font-weight: 700; /* bold */
+  // }
   
-  .sub-heading-s {
-    font-size: 18px;
-    font-weight: 600; /* semi-bold */
-  }
+  // .sub-heading-s {
+  //   font-size: 18px;
+  //   font-weight: 600; /* semi-bold */
+  // }
   
   /* Large screens */
   // @media (min-width: 1024px) {
-    .text-font-l {
-      font-size: 16px;
-      font-weight: 500; /* medium on large */
-    }
+    // .text-font-l {
+    //   font-size: 16px;
+    //   font-weight: 500; /* medium on large */
+    // }
   
-    .main-heading-l {
-      font-size: 36px;
-      font-weight: 800; /* extra bold on large */
-    }
+    // .main-heading-l {
+    //   font-size: 36px;
+    //   font-weight: 800; /* extra bold on large */
+    // }
   
-    .sub-heading-l {
-      font-size: 24px;
-      font-weight: 700; /* bold on large */
-    }
+    // .sub-heading-l {
+    //   font-size: 24px;
+    //   font-weight: 700; /* bold on large */
+    // }
 
-    @media (min-width: 640px) {
-      .sm\:text-font-l {
-        font-size: 16px;
-        font-weight: 500;
-      }
+    // @media (min-width: 640px) {
+    //   .sm\:text-font-l {
+    //     font-size: 16px;
+    //     font-weight: 500;
+    //   }
 
-      .sm\:text-subheading {
-        font-size: 16px;
-        font-weight: 600;
-      }
+    //   .sm\:text-subheading {
+    //     font-size: 16px;
+    //     font-weight: 600;
+    //   }
       
-      .sm\:text-heading {
-        font-size: 24px;
-        font-weight: 700;
-      }
-    }
+    //   .sm\:text-heading {
+    //     font-size: 24px;
+    //     font-weight: 700;
+    //   }
+    // }
 
 
  //Left right animation
  [appAnimateRight] {
-  opacity: 0;
+  opacity: 0.5;
   transform: translateX(-60px);
   transition: all 0.5s linear;
       animation: appear linear;
@@ -99,7 +99,7 @@ html {
 }
 
 [appAnimateLeft] {
-  opacity: 0;
+  opacity: 0.5;
       animation: appear linear;
   animation-timeline: view();
   transform: translateX(80px);
