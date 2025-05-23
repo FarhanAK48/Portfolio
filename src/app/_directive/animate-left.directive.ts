@@ -19,7 +19,7 @@ export class AnimateLeftDirective {
     }, {
       threshold: 0.2
     });
-
+    console.log('Directive initialized', this.el.nativeElement);
     observer.observe(this.el.nativeElement);
   }
 }
