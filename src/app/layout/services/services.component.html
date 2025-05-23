@@ -4,7 +4,7 @@
 
 
     <section class="services-intro text-center py-2">
-      <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-4 text-center">
+      <h2 class="text-gray-800 dark:text-white text-3xl sm:text-2xl md:text-3xl font-bold leading-snug my-4 text-center">
         Services<br />
         <span class="text-base font-normal">— What I offer —</span>
       </h2>
@@ -15,13 +15,13 @@
           <div *ngFor="let card of cards"
             class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
             <img [src]="card.image" [alt]="card.alt" class="h-16 mx-auto mb-4" />
-            <h3 class="text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2">{{ card.title }}</h3>
+            <h3 class="text-xl md:text-2xl font-semibold leading-normal mb-2">{{ card.title }}</h3>
             <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium">{{ card.description }}</p>
           </div>
         </div>
       </section>
       <section class="technologies py-16">
-        <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug  my-4 text-center">
+        <h2 class="text-gray-800 dark:text-white text-3xl sm:text-2xl md:text-3xl font-bold leading-snug my-4 text-center">
           Skills<br />
           <span class="text-base font-normal">— I can say I'm quite good at —</span>
         </h2>
@@ -33,7 +33,7 @@
               <img class="h-20 w-20" loading="lazy" [src]="item.icon" alt="Angular">
             </div>
             <div class="px-4 py-4">
-              <div class="text-gray-800 dark:text-white text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2">{{item.name}}</div>
+              <div class="text-gray-800 dark:text-white text-xl md:text-2xl font-semibold leading-normal mb-2">{{item.name}}</div>
               <!-- <p class="">{{item.detail}}</p> -->
             </div>
             <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium" *ngFor="let tool of item.more">
@@ -42,7 +42,7 @@
           </div>
         </div>
       </section>
-      <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-12 text-center">
+      <h2 class="text-gray-800 dark:text-white text-3xl md:text-3xl font-bold leading-snug my-12 text-center">
         Tools<br />
         <span class="text-base font-normal">— Tools I Work With —</span>
       </h2> 
