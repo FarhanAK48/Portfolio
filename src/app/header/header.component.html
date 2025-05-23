@@ -64,11 +64,14 @@
         </div>
     </div>
 </header> -->
-<header class="bg-white/90 dark:bg-[#222222]/90  text-black dark:text-[#f5f5f5]">
+<header class="bg-white/70 dark:bg-[#222222]/70  text-black dark:text-[#f5f5f5]">
     <nav class="mx-auto flex items-center justify-between p-6 lg:px-20" aria-label="Global">
-  <a class="-m-1.5 p-1.5">
-    <h1 class="text-3xl font-bold leading-6">Farhan</h1>
-  </a>
+      <div class="flex items-center">
+        <img class="h-8 w-8 sm:h-10 sm:w-10 rounded-full me-2" src="../../assets/pf1.png" alt="">
+        <a class="-m-1.5 p-1.5">
+          <h1 class="text-2xl sm:text-3xl font-bold leading-6">Farhan</h1>
+        </a>
+      </div>
 
   <div (click)="$event.stopPropagation()" class="flex lg:hidden menu-button">
     <button (click)="toggleTheme()"
