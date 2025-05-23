@@ -1,5 +1,5 @@
 <!-- Timeline container -->
-<section id="home" [ngClass]="{ 'slide-down': applyAnimation }"
+<section id="home"
     class="bg-gray-100 lg:px-20  sm:text-lg text:md dark:bg-[#121212] text-gray-500 dark:text-gray-400 p-6 py-10 ">
     <h2 class="text-gray-800 dark:text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug my-10 text-center">
         My journey<br />
@@ -60,7 +60,7 @@
             <!-- Desktop Screen -->
             <div class="hidden md:flex md:w-full md:flex-row md:items-center">
                 <div class="w-1/2" [ngClass]="i % 2 === 0 ? 'flex justify-end pr-8' : ''">
-                    <div *ngIf="i % 2 === 0"
+                    <div appAnimateRight *ngIf="i % 2 === 0"
                         class="w-full max-w-md rounded-xl bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-[#e0e0e0] p-6 shadow-md border-b-4 border-blue-600">
                         <p class="mb-1 text-base sm:text-lg md:text-xl font-normal leading-relaxed text-slate-500 dark:text-slate-400">{{ item.date }}</p>
                         <h3 class="mb-1 text-lg font-bold text-slate-800 dark:text-white">{{ item.title }}</h3>
@@ -99,7 +99,7 @@
     
                 <!-- Right content (odd index) -->
                 <div class="w-1/2" [ngClass]="i % 2 === 1 ? 'flex justify-start pl-8' : ''">
-                    <div *ngIf="i % 2 === 1"
+                    <div *ngIf="i % 2 === 1" appAnimateLeft
                         class="w-full max-w-md rounded-xl bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-[#e0e0e0] p-6 shadow-md border-b-4 border-blue-600">
                         <p class="mb-1 text-base sm:text-lg md:text-xl font-normal leading-relaxed text-slate-500 dark:text-slate-400">{{ item.date }}</p>
                         <h3 class="mb-1 text-lg font-bold text-slate-800 dark:text-white">{{ item.title }}</h3>

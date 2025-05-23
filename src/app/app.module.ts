@@ -16,8 +16,7 @@ import { AnimateRightDirective } from './_directive/animate-right.directive';
     HeaderComponent,
     FooterComponent,
     ClickedOutsideDirective,
-    AnimateLeftDirective,
-    AnimateRightDirective
+   
   ],
   imports: [
     BrowserModule,

@@ -81,29 +81,32 @@ font-family: sans-serif;
 
 
  //Left right animation
- [appAnimateLeft] {
-  opacity: 0.5;
+ [appAnimateRight] {
+  opacity: 0;
   transform: translateX(-60px);
-  transition: all 1s ease-in-out;
+  transition: all 0.5s linear;
+      animation: appear linear;
+  animation-timeline: view();
 }
 
-/* Triggered class via HostBinding */
-.shows {
+.show {
   opacity: 1;
   transform: translateX(0);
 }
 
-
-
-[appAnimateRight] {
-  opacity: 0.5;
-  animation: appear linear;
-  animation-timeline: view();
-  transform: translateX(80px);
-  transition: all 1s linear;
+html {
+  scroll-behavior: smooth;
 }
 
-.show {
+[appAnimateLeft] {
+  opacity: 0;
+      animation: appear linear;
+  animation-timeline: view();
+  transform: translateX(80px);
+  transition: all 0.5s linear;
+}
+
+.shows {
   opacity: 1;
   transform: translateX(0);
 }

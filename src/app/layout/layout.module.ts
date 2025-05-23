@@ -11,7 +11,7 @@ import { AnimateRightDirective } from '../_directive/animate-right.directive';
 @NgModule({
   declarations: [
     LayoutComponent,
-  
+
     
   ],
   imports: [
