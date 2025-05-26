@@ -65,35 +65,34 @@
     </div>
 </header> -->
 <header class="bg-white/90 dark:bg-[#222222]/90 lg:backdrop-blur-md z-100 text-black dark:text-[#f5f5f5]">
-    <nav class="mx-auto flex items-center justify-between p-6 lg:px-20" aria-label="Global">
-      <div class="flex items-center">
-        <img class="h-8 w-8 sm:h-10 sm:w-10 rounded-full me-2" src="../../assets/pf1.png" alt="">
-        <a class="-m-1.5 p-1.5">
-          <h1 class="text-2xl sm:text-3xl font-bold leading-6">Farhan</h1>
-        </a>
-      </div>
+  <nav class="mx-auto flex items-center justify-between p-6 lg:px-20" aria-label="Global">
+    <div class="flex items-center">
+      <img class="h-8 w-8 sm:h-10 sm:w-10 rounded-full me-2" src="../../assets/pf1.png" alt="">
+      <a class="-m-1.5 p-1.5">
+        <h1 class="text-2xl sm:text-3xl font-bold leading-6">Farhan</h1>
+      </a>
+    </div>
 
-  <div (click)="$event.stopPropagation()" class="flex lg:hidden menu-button">
-    <button (click)="toggleTheme()"
-  class="px-1 py-1 bg-gray-200 dark:bg-black  rounded-full flex items-center justify-center me-2 gap-2">
+    <div (click)="$event.stopPropagation()" class="flex lg:hidden menu-button">
+      <button (click)="toggleTheme()"
+        class="px-1 py-1 bg-gray-200 dark:bg-black  rounded-full flex items-center justify-center me-2 gap-2">
 
-  <!-- Sun icon (white) when dark mode is ON -->
-  <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg"
-    class="w-6 h-6 text-white transition" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="5" />
-    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-  </svg>
+        <!-- Sun icon (white) when dark mode is ON -->
+        <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white transition" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
 
-  <!-- Moon icon (black) when dark mode is OFF -->
-  <svg *ngIf="!isDarkMode" xmlns="http://www.w3.org/2000/svg"
-    class="w-6 h-6 text-black transition" fill="currentColor" viewBox="0 0 24 24">
-    <path
-      d="M21.75 15.002A9 9 0 1112 3a7 7 0 009.75 12.002z" />
-  </svg>
+        <!-- Moon icon (black) when dark mode is OFF -->
+        <svg *ngIf="!isDarkMode" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black transition"
+          fill="currentColor" viewBox="0 0 24 24">
+          <path d="M21.75 15.002A9 9 0 1112 3a7 7 0 009.75 12.002z" />
+        </svg>
 
-</button>
-    <!-- <button (click)="toggleTheme()"
+      </button>
+      <!-- <button (click)="toggleTheme()"
     class="px-4 py-2 bg-blue-500 dark:bg-yellow-400 text-white me-2 dark:text-black rounded-md shadow-md flex items-center justify-center gap-2">
     
     <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg"
@@ -109,71 +108,67 @@
       <path d="M21.752 15.002A9 9 0 1 1 9.002 2.248a7 7 0 1 0 12.75 12.75z" />
     </svg>
   </button> -->
-    <button (click)="toggleMenu()" type="button"
-      class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-      <span class="sr-only">Open main menu</span>
-      <svg class="h-6 w-6 stroke-black dark:stroke-[#f5f5f5] fill-black dark:fill-[#222222]"
-        viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>
-    </button>
-    
-  </div>
+      <button (click)="toggleMenu()" type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6 stroke-black dark:stroke-[#f5f5f5] fill-black dark:fill-[#222222]" viewBox="0 0 24 24"
+          stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
 
-  <div class="hidden lg:flex lg:gap-x-12 items-center">
-    <!-- Theme toggle button -->
-    <button (click)="toggleTheme()"
-  class="px-1 py-1 bg-gray-200 dark:bg-black  rounded-full flex items-center justify-center me-2 gap-2">
+    </div>
 
-  <!-- Sun icon (white) when dark mode is ON -->
-  <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg"
-    class="w-6 h-6 text-white transition" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="5" />
-    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-  </svg>
+    <div class="hidden lg:flex lg:gap-x-10 items-center">
+      <a *ngFor="let label of tabs" (click)="changeTab(label)" [ngClass]="{'tab-color': selectedTab === label}"
+        class="text-lg font-medium hover:text-[#0788FF]  text-gray-600 dark:text-gray-400 leading-6 transition-transform duration-300 flex items-center hover:scale-105 cursor-pointer">
+        {{ label }}
+      </a>
+      <!-- Theme toggle button -->
+      <button (click)="toggleTheme()"
+        class="px-1 py-1 bg-gray-200 dark:bg-black  rounded-full flex items-center justify-center gap-2">
 
-  <!-- Moon icon (black) when dark mode is OFF -->
-  <svg *ngIf="!isDarkMode" xmlns="http://www.w3.org/2000/svg"
-    class="w-6 h-6 text-black transition" fill="currentColor" viewBox="0 0 24 24">
-    <path
-      d="M21.75 15.002A9 9 0 1112 3a7 7 0 009.75 12.002z" />
-  </svg>
+        <!-- Sun icon (white) when dark mode is ON -->
+        <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white transition" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
 
-</button>
+        <!-- Moon icon (black) when dark mode is OFF -->
+        <svg *ngIf="!isDarkMode" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black transition"
+          fill="currentColor" viewBox="0 0 24 24">
+          <path d="M21.75 15.002A9 9 0 1112 3a7 7 0 009.75 12.002z" />
+        </svg>
 
-    <!-- Tabs -->
-    <a *ngFor="let label of tabs" (click)="changeTab(label)"
-      [ngClass]="{'tab-color': selectedTab === label}"
-      class="text-lg font-medium hover:text-[#0788FF]  text-gray-600 dark:text-gray-400 leading-6 transition-transform duration-300 flex items-center hover:scale-105 cursor-pointer">
-      {{ label }}
-    </a>
-  </div>
-</nav>
-  
-    <div *ngIf="menuOpened" (clickOutside)="clickOut()" clickedOutside
-      class="fixed mobile-menu inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white/80 dark:bg-[#222222]/80 backdrop-blur-md text-black dark:text-[#f5f5f5] px-6 py-6 sm:w-[300px] sm:ring-1 sm:ring-gray-900/10">
-      <div class="flex items-center justify-between">
-        <img class="h-8 w-8 sm:h-10 sm:w-10 rounded-full me-2" src="../../assets/pf1.png" alt="">
+      </button>
 
-  
-        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200" (click)="toggleMenu()">
-          <span class="sr-only">Close menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-  
-      <div class="mt-6 flow-root">
-        <div class="-my-6 divide-y divide-gray-500/10">
-          <div class="space-y-2 py-6">
-            <a class="-mx-3 block rounded-lg transition-transform duration-300 hover:scale-105 px-3 py-2 text-base font-medium leading-7 bg-white dark:bg-[#222222] text-gray-600 dark:text-gray-400"
-              *ngFor="let item of tabs" (click)="changeTab(item)">{{ item }}</a>
-          </div>
+    </div>
+  </nav>
+
+  <div *ngIf="menuOpened" (clickOutside)="clickOut()" clickedOutside
+    class="fixed mobile-menu inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white/80 dark:bg-[#222222]/80 backdrop-blur-md text-black dark:text-[#f5f5f5] px-6 py-6 sm:w-[300px] sm:ring-1 sm:ring-gray-900/10">
+    <div class="flex items-center justify-between">
+      <img class="h-8 w-8 sm:h-10 sm:w-10 rounded-full me-2" src="../../assets/pf1.png" alt="">
+
+
+      <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200" (click)="toggleMenu()">
+        <span class="sr-only">Close menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="mt-6 flow-root">
+      <div class="-my-6 divide-y divide-gray-500/10">
+        <div class="space-y-2 py-6">
+          <a class="-mx-3 block rounded-lg transition-transform duration-300 hover:scale-105 px-3 py-2 text-base font-medium leading-7 bg-white dark:bg-[#222222] text-gray-600 dark:text-gray-400"
+            *ngFor="let item of tabs" (click)="changeTab(item)">{{ item }}</a>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
