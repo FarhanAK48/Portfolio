@@ -1,7 +1,8 @@
 <div [ngClass]="{ 'slide-down': applyAnimation }"
     class="projects-page text-font bg-gray-100 dark:bg-[#121212] text-gray-500 dark:text-gray-400 p-6 py-10 lg:px-20 md:flex items-center">
     <div class="mx-auto">
-        <h2 class="text-2xl md:text-3xl font-semibold leading-snug text-gray-800 dark:text-white bg-clip-text  my-10 text-center">
+        <h2
+            class="text-2xl md:text-3xl font-semibold leading-snug text-gray-800 dark:text-white bg-clip-text  my-10 text-center">
             Projects<br />
             <span class="text-base font-normal">— Implemented solution via code —</span>
         </h2>
@@ -10,31 +11,41 @@
             <div *ngFor="let item of project; let i = index"
                 class="w-full max-w-sm transition hover:scale-105 ease-in duration-300 p-4"
                 [ngClass]="{'lg:col-start-2': i === 3 && project.length === 4}">
-                <div class="h-60 w-full overflow-hidden rounded-md">
-                    <img [src]="item.img" alt="{{ item.title }}" class="h-full w-full object-cover" />
-                </div>
-                <h3 class="text-lg sm:text-xl md:text-2xl font-medium leading-normal text-gray-800 dark:text-white mb-2 mt-3">
-                    {{ item.title }}
-                </h3>
-                <p class="text-sm sm:text-base font-medium ">
-                    {{ item.description }}
-                </p>
-                <button (click)="openModal(i)"
-                    class="flex items-center rounded-xl   py-3 px-6 mt-4 text-center transition-all text-md font-bold shadow-sm hover:shadow-lg bg-blue-200 text-blue-600 hover:text-white hover:bg-slate-800  focus:text-white focus:bg-slate-800 focus:border-slate-800  active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    type="button">
-                    See Details
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        class="w-4 h-4 ml-1.5">
-                        <path fill-rule="evenodd"
-                            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
+                <div class="flex flex-col h-full rounded-md p-4">
+
+                    <div class="h-60 w-full overflow-hidden rounded-md">
+                        <img [src]="item.img" alt="{{ item.title }}" class="h-full w-full object-cover" />
+                    </div>
+
+                    <div class="flex-grow">
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-medium leading-normal text-gray-800 dark:text-white mb-2 mt-3">
+                            {{ item.title }}
+                        </h3>
+                        <p class="text-sm sm:text-base font-medium">
+                            {{ item.description }}
+                        </p>
+                    </div>
+
+                    <button (click)="openModal(i)"
+                        class="self-start flex items-center rounded-xl py-2 px-6 mt-4 text-center transition-all text-md font-bold shadow-sm hover:shadow-lg bg-blue-200 text-blue-600 hover:text-white hover:bg-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button">
+                        See Details
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 ml-1.5">
+                            <path fill-rule="evenodd"
+                                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                </div>
             </div>
         </div>
 
-        <h2 class="text-2xl md:text-3xl font-semibold leading-snug text-gray-800 dark:text-white bg-clip-text  my-10 text-center">
+        <h2
+            class="text-2xl md:text-3xl font-semibold leading-snug text-gray-800 dark:text-white bg-clip-text  my-10 text-center">
             Side Project<br />
             <span class="text-base font-normal">— Creative ideas in action —</span>
         </h2>
@@ -44,15 +55,17 @@
                 class="w-full max-w-sm rounded-xl text-center transition hover:scale-105 bg-white dark:bg-[#1e1e1e] ease-in duration-300 p-4 shadow-md"
                 [ngClass]="{'lg:col-start-2': i === 3 && project.length === 4}">
                 <div class="h-60 w-full overflow-hidden rounded-md">
-                    <img [src]="item.img" alt="{{ item.title }}" class="h-full w-full object-fill transform hover:scale-125 duration-200" />
+                    <img [src]="item.img" alt="{{ item.title }}"
+                        class="h-full w-full object-fill transform hover:scale-125 duration-200" />
                 </div>
-                <h3 class="text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2 text-gray-800 dark:text-white mt-3">
+                <h3
+                    class="text-lg sm:text-xl md:text-2xl font-medium leading-normal mb-2 text-gray-800 dark:text-white mt-3">
                     {{ item.title }}
                 </h3>
                 <p class="text-sm sm:text-base font-medium ">
                     {{ item.description }}
                 </p>
-                <button (click)="openPopup(i)" class="w-full flex justify-center items-center gap-2 rounded-xl py-3 px-6 mt-4 text-md font-bold shadow-sm transition-all 
+                <button (click)="openPopup(i)" class="w-full flex justify-center items-center gap-2 rounded-xl py-2 px-6 mt-4 text-md font-bold shadow-sm transition-all 
                        bg-blue-200 text-blue-600 hover:bg-slate-800 hover:text-white 
                        focus:bg-slate-800 focus:text-white 
                        active:bg-slate-800 active:text-white 
@@ -74,13 +87,13 @@
     <div *ngIf="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40" (click)="closeModal()"></div>
     <div class="fixed top-0 right-0 h-screen  sm:w-[450px] bg-white dark:bg-[#121212] rounded-2xl z-50 transform transition-transform duration-300 overflow-y-auto"
         [ngClass]="{ 'translate-x-0': isModalOpen, 'translate-x-full': !isModalOpen }">
-      
+
         <div class=" sticky top-0 bg-white dark:bg-[#121212] z-10 flex justify-between items-center p-4 border-b">
             <h2 class="text-lg sm:text-xl md:text-2xl font-medium leading-normal">Project Details</h2>
             <button (click)="closeModal()" class="text-gray-600 hover:text-blue-500 text-2xl font-bold">&times;</button>
         </div>
 
-       
+
         <div *ngIf="projectDetails[sectionIndex] as project" class="mb-4 p-4 rounded ">
             <div class="">
                 <img [src]="project.image" alt="">
@@ -123,7 +136,8 @@
             (click)="$event.stopPropagation()">
 
             <div class="flex justify-between items-center pb-4 mb-4">
-                <h2 class=" text-gray-800 dark:text-white text-lg sm:text-xl md:text-2xl font-medium leading-normal">{{ project.projectName }}</h2>
+                <h2 class=" text-gray-800 dark:text-white text-lg sm:text-xl md:text-2xl font-medium leading-normal">{{
+                    project.projectName }}</h2>
                 <button class="text-gray-600 hover:text-blue-500 text-2xl font-bold"
                     (click)="closePopup()">&times;</button>
             </div>
@@ -131,7 +145,8 @@
             <div class="space-y-4">
                 <img class="" [src]="project.image" alt="">
                 <p class="text-sm sm:text-base font-medium ">{{ project.about }}</p>
-                <p class="text-sm sm:text-base font-medium text-gray-600 mb-3">Duration : {{ project.start }} - {{ project.end }}
+                <p class="text-sm sm:text-base font-medium text-gray-600 mb-3">Duration : {{ project.start }} - {{
+                    project.end }}
                 </p>
 
                 <div class="mb-4">
@@ -145,21 +160,22 @@
                 </div>
             </div>
             <a [href]="project.repo" target="_blank" rel="noopener noreferrer" class="w-full mt-4 block">
-                <button class="w-full bg-blue-200 my-2 text-gray-800 py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
-                  View Repository
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
-                    <path fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd" />
-                  </svg>
+                <button
+                    class="w-full bg-blue-200 my-2 text-gray-800 py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
+                    View Repository
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                            clip-rule="evenodd" />
+                    </svg>
                 </button>
-              </a>
+            </a>
         </div>
     </div>
 
 
     <button (click)="scrollToTop()"
-    class="fixed bottom-8 z-10 right-8 py-2.5 p-2 bg-blue-600 text-white rounded-xl shadow-xl shadow-blue-500/50 transition-transform duration-300"
+        class="fixed bottom-8 z-10 right-8 py-2.5 p-2 bg-blue-600 text-white rounded-xl shadow-xl shadow-blue-500/50 transition-transform duration-300"
         [class.translate-x-0]="showButton" [class.translate-x-20]="!showButton" aria-label="Scroll to top">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
