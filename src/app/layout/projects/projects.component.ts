@@ -97,7 +97,7 @@ export class ProjectsComponent implements OnInit {
       description:
         'Contributed to a custom relationship-building app focused on meaningful connections. Worked on key features like user onboarding, profile setup, and interaction flows using Ionic and Tailwind CSS, ensuring a smooth and engaging user experience.',
 
-      img: '../../../assets/salon-removebg-preview.png'
+      img: '../../../assets/popout.png'
     },
     {
       title: 'Ok Stack',
@@ -282,7 +282,7 @@ export class ProjectsComponent implements OnInit {
       ]
     },
     {
-      image: '../../../assets/salon-removebg-preview.png',
+      image: '../../../assets/popout.png',
       projectName: 'Popout',
       company: '@BolTech Solutions',
       start: 'Aug 2024',
