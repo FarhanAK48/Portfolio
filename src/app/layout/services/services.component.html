@@ -11,9 +11,9 @@
     </section>
     <div class="bg-gray-100 dark:bg-[#121212] text-gray-600 dark:text-[#e0e0e0]">
       <section class="services-grid py-8  ">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
           <div *ngFor="let card of cards"
-            class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 text-center hover:shadow-xl transition duration-300">
+            class="bg-white dark:bg-[#1e1e1e] text-gray-600 dark:text-white shadow-md rounded-2xl p-6 sm:p-12 text-center hover:shadow-xl transition duration-300">
             <img [src]="card.image" [alt]="card.alt" class="h-16 mx-auto mb-4" />
             <h3 class="text-lg md:text-2xl font-medium leading-normal mb-2">{{ card.title }}</h3>
             <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium">{{ card.description }}</p>
