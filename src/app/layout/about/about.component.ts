@@ -52,8 +52,8 @@ scrollToTop() {
   }
   downloadCV() {
     const link = document.createElement('a');
-    link.href = 'assets/Farhan.pdf'; 
-    link.download = 'My_CV.pdf'; 
+    link.href = 'assets/M_FARHAN.pdf'; 
+    link.download = 'M_FARHAN.pdf'; 
     link.click();
   }
 
