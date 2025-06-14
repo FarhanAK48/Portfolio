@@ -128,7 +128,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Inventory Management',
       description:
         "Developed an Inventory Management system using Node.js, featuring product tracking, stock updates, and CRUD operations with role-based access control to manage user permissions efficiently.",
-      img: '../../../assets/Ok-Stack/1.png'
+      img: '../../../assets/inv.jpeg'
 
     },
 
@@ -170,7 +170,7 @@ export class ProjectsComponent implements OnInit {
 
     },
     {
-      image: '../../../assets/react-basics.png',
+      image: '../../../assets/inv.jpeg',
       projectName: 'Inventory Management',
       start: 'june 2024',
       end: 'Aug 2024',
