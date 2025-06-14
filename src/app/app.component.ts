@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,14 @@ export class AppComponent {
   // isDarkMode:any;
 
   constructor(private renderer: Renderer2) {}
+  showHeader = true;
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const viewportHeight = window.innerHeight;
+    this.showHeader = scrollPosition < viewportHeight; 
+  }
   ngOnInit() {
     // Check saved theme preference
     // this.isDarkMode = localStorage.getItem('theme') === 'dark';
